@@ -1,3 +1,3 @@
 # OMTimePack
 
-Paul Nauert, 2001-2005
+Paul Nauert, Ircam 2001-2005
