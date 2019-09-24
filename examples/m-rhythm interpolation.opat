@@ -1,0 +1,8472 @@
+
+(:patch
+ (:om-version 0.0301)
+ (:name "m-rhythm interpolation")
+ (:doc "")
+ (:info
+  (:created "2019/09/24 23:29:42")
+  (:modified "2019/09/24 23:35:37"))
+ (:window (:size (997 491)) (:position (138 138)))
+ (:grid nil)
+ (:lock nil)
+ (:boxes
+  (:box
+   (:type :value)
+   (:reference fixnum)
+   (:group-id nil)
+   (:name "aux3")
+   (:x 637)
+   (:y 72)
+   (:w 32)
+   (:h 30)
+   (:color
+    (:color-or-nil (:color (:color 1.0 1.0 1.0 1.0)) (:t-or-nil t)))
+   (:border nil)
+   (:roundness nil)
+   (:text-font nil)
+   (:align nil)
+   (:lock nil)
+   (:inputs)
+   (:outputs (:output (:name "value") (:reactive nil)))
+   (:value 0)
+   (:id 0))
+  (:box
+   (:type :object)
+   (:reference bpf)
+   (:group-id nil)
+   (:name "BPF")
+   (:x 541)
+   (:y 46)
+   (:w 85)
+   (:h 78)
+   (:color nil)
+   (:border nil)
+   (:roundness nil)
+   (:text-font nil)
+   (:align :center)
+   (:name "BPF")
+   (:display :mini-view)
+   (:showname nil)
+   (:show-markers t)
+   (:group-id nil)
+   (:lock :locked)
+   (:lambda nil)
+   (:inputs
+    (:input
+     (:type :standard)
+     (:name "SELF")
+     (:value nil)
+     (:reactive nil))
+    (:input
+     (:type :standard)
+     (:name "X-POINTS")
+     (:value (:list 0 80010))
+     (:reactive nil))
+    (:input
+     (:type :standard)
+     (:name "Y-POINTS")
+     (:value (:list 0 100))
+     (:reactive nil))
+    (:input
+     (:type :key)
+     (:name "decimals")
+     (:value 0)
+     (:reactive nil)))
+   (:outputs
+    (:output (:name "SELF") (:reactive nil))
+    (:output (:name "X-POINTS") (:reactive nil))
+    (:output (:name "Y-POINTS") (:reactive nil))
+    (:output (:name "decimals") (:reactive nil)))
+   (:window (:size nil) (:position nil))
+   (:edition-params)
+   (:value
+    (:object
+     (:class bpf)
+     (:slots
+      ((:onset 0)
+       (:duration 80312)
+       (:interpol (:number-or-nil (:number 50) (:t-or-nil nil)))
+       (:action nil)
+       (:color (:color 0 0 0 1.0))
+       (:decimals 0)
+       (:x-points (:list 0 34042 34344 80312))
+       (:y-points (:list 100 100 0 0))))
+     (:add-slots
+      ((:decimals 0)
+       (:color (:color 0 0 0 1.0))
+       (:name nil)
+       (:action nil)
+       (:interpol (:number-or-nil (:number 50) (:t-or-nil nil)))))))
+   (:id 1))
+  (:box
+   (:type :value)
+   (:reference cons)
+   (:group-id nil)
+   (:name "list3")
+   (:x 672)
+   (:y 27)
+   (:w 134)
+   (:h 89)
+   (:color
+    (:color-or-nil (:color (:color 1.0 1.0 1.0 1.0)) (:t-or-nil t)))
+   (:border nil)
+   (:roundness nil)
+   (:text-font nil)
+   (:align nil)
+   (:lock nil)
+   (:inputs)
+   (:outputs (:output (:name "value") (:reactive nil)))
+   (:value
+    (:list
+     (:list 82 10 5 3 3 0)
+     (:list 45 60 15 10 7 5)
+     (:list 35 30 40 12 9 7)
+     (:list 18 25 25 20 10 5)
+     (:list 0 20 25 20 0 0)
+     (:list 0 4 30 25 0 0)))
+   (:id 2))
+  (:box
+   (:type :function)
+   (:reference list)
+   (:group-id nil)
+   (:name "list")
+   (:x 714)
+   (:y 141)
+   (:w 52)
+   (:h 30)
+   (:color nil)
+   (:border nil)
+   (:roundness nil)
+   (:text-font nil)
+   (:align nil)
+   (:lock nil)
+   (:lambda nil)
+   (:inputs
+    (:input (:type :optional) (:name "x") (:value nil) (:reactive nil))
+    (:input (:type :optional) (:name "x") (:value 0) (:reactive nil))
+    (:input (:type :optional) (:name "x") (:value nil) (:reactive nil))
+    (:input
+     (:type :optional)
+     (:name "x")
+     (:value nil)
+     (:reactive nil)))
+   (:outputs (:output (:name "out") (:reactive nil)))
+   (:id 3))
+  (:box
+   (:library "OMTimePack")
+   (:type :function)
+   (:reference m-rhythm)
+   (:group-id nil)
+   (:name "m-rhythm")
+   (:x 704)
+   (:y 202)
+   (:w 87)
+   (:h 30)
+   (:color nil)
+   (:border nil)
+   (:roundness nil)
+   (:text-font nil)
+   (:align nil)
+   (:lock nil)
+   (:lambda nil)
+   (:inputs
+    (:input
+     (:type :standard)
+     (:name "POOL")
+     (:value (:list 0.1 0.28 0.4 1.2 1.85 2.75))
+     (:reactive nil))
+    (:input
+     (:type :standard)
+     (:name "PTABLE")
+     (:value nil)
+     (:reactive nil))
+    (:input
+     (:type :standard)
+     (:name "TOT-TIME")
+     (:value 10000)
+     (:reactive nil))
+    (:input
+     (:type :standard)
+     (:name "INIT-CONDS")
+     (:value 5)
+     (:reactive nil)))
+   (:outputs
+    (:output (:name "out0") (:reactive nil))
+    (:output (:name "out1") (:reactive nil))
+    (:output (:name "out2") (:reactive nil)))
+   (:id 4))
+  (:box
+   (:type :value)
+   (:reference cons)
+   (:group-id nil)
+   (:name "aux21")
+   (:x 544)
+   (:y 156)
+   (:w 164)
+   (:h 30)
+   (:color
+    (:color-or-nil (:color (:color 1.0 1.0 1.0 1.0)) (:t-or-nil t)))
+   (:border nil)
+   (:roundness nil)
+   (:text-font nil)
+   (:align nil)
+   (:lock nil)
+   (:inputs)
+   (:outputs (:output (:name "value") (:reactive nil)))
+   (:value (:list 88 280 400 1200 1850 2750))
+   (:id 5))
+  (:box
+   (:type :object)
+   (:reference voice)
+   (:group-id nil)
+   (:name "VOICE11")
+   (:x 600)
+   (:y 334)
+   (:w 279)
+   (:h 90)
+   (:color nil)
+   (:border nil)
+   (:roundness nil)
+   (:text-font nil)
+   (:align :center)
+   (:name "VOICE11")
+   (:display :mini-view)
+   (:showname nil)
+   (:show-markers t)
+   (:group-id nil)
+   (:lock nil)
+   (:lambda nil)
+   (:inputs
+    (:input
+     (:type :standard)
+     (:name "SELF")
+     (:value nil)
+     (:reactive nil))
+    (:input
+     (:type :standard)
+     (:name "TREE")
+     (:value (:list ? (:list (:list |4//4| (:list 1 1 1 1)))))
+     (:reactive nil))
+    (:input
+     (:type :standard)
+     (:name "LMIDIC")
+     (:value (:list (:list 6000)))
+     (:reactive nil))
+    (:input
+     (:type :standard)
+     (:name "TEMPO")
+     (:value 80)
+     (:reactive nil)))
+   (:outputs
+    (:output (:name "SELF") (:reactive nil))
+    (:output (:name "TREE") (:reactive nil))
+    (:output (:name "LMIDIC") (:reactive nil))
+    (:output (:name "TEMPO") (:reactive nil)))
+   (:window (:size nil) (:position nil))
+   (:edition-params
+    (:time-map
+     (:list
+      (:list -1000 0)
+      (:list 0 7.5)
+      (:list 300 11.5)
+      (:list 375 15.5)
+      (:list 675 19.5)
+      (:list 750 22.75)
+      (:list 975 26.0)
+      (:list 1275 30.0)
+      (:list 1350 34.0)
+      (:list 1500 43.5)
+      (:list 3000 53.0)
+      (:list 3750 56.5)
+      (:list 4125 60.0)
+      (:list 4406 63.9375)
+      (:list 4500 73.25)
+      (:list 5250 76.5625)
+      (:list 5500 79.875)
+      (:list 5562 83.1875)
+      (:list 5812 87.020836)
+      (:list 5875 90.85417)
+      (:list 6000 100.270836)
+      (:list 6150 103.6875)
+      (:list 6450 107.6875)
+      (:list 6525 111.6875)
+      (:list 6750 115.4375)
+      (:list 6938 119.1875)
+      (:list 7219 123.125)
+      (:list 7500 133.0625)
+      (:list 7750 136.89583)
+      (:list 8000 140.72916)
+      (:list 8250 144.56249)
+      (:list 9000 154.39582)
+      (:list 9281 158.22914)
+      (:list 9656 162.47914)
+      (:list 9750 166.72914)
+      (:list 10500 176.97914)
+      (:list 11000 181.22914)
+      (:list 11125 185.47914)
+      (:list 11250 188.89582)
+      (:list 11375 192.31249)
+      (:list 11625 196.14582)
+      (:list 11688 199.97914)
+      (:list 11938 203.81247)
+      (:list 12000 213.0208)
+      (:list 12250 216.22913)
+      (:list 12750 220.8958)
+      (:list 13250 225.56247)
+      (:list 13438 230.22914)
+      (:list 13500 239.43747)
+      (:list 13750 242.6458)
+      (:list 14000 246.47913)
+      (:list 14250 250.31246)
+      (:list 14400 254.14579)
+      (:list 14700 258.14578)
+      (:list 14775 262.14578)
+      (:list 15000 271.89578)
+      (:list 15188 275.64578)
+      (:list 15750 280.52078)
+      (:list 16500 291.39578)
+      (:list 17250 296.27078)
+      (:list 17750 301.14578)
+      (:list 17938 306.02078)
+      (:list 18000 315.22913)
+      (:list 18375 318.43747)
+      (:list 18750 322.68747)
+      (:list 19031 326.62497)
+      (:list 19312 330.56247)
+      (:list 19500 340.18747)
+      (:list 19594 343.81247)
+      (:list 19875 347.74997)
+      (:list 20156 351.68747)
+      (:list 20250 354.99997)
+      (:list 20438 358.31247)
+      (:list 20719 362.24997)
+      (:list 21000 372.18747)
+      (:list 21375 376.43747)
+      (:list 21750 380.68747)
+      (:list 22500 390.93747)
+      (:list 23250 395.18747)
+      (:list 24000 406.68747)
+      (:list 24750 412.18747)
+      (:list 25071 417.68747)
+      (:list 25500 428.11603)
+      (:list 26250 432.5446)
+      (:list 26312 436.97314)
+      (:list 26812 441.6398)
+      (:list 27000 452.30646)
+      (:list 27750 456.9731)
+      (:list 28125 461.63977)
+      (:list 28500 471.88977)
+      (:list 28562 476.13977)
+      (:list 28938 480.38977)
+      (:list 29188 484.2231)
+      (:list 29250 488.05646)
+      (:list 29344 491.8898)
+      (:list 29719 496.1398)
+      (:list 30000 506.0773)
+      (:list 30150 510.0148)
+      (:list 30750 515.0148)
+      (:list 31350 520.0148)
+      (:list 31500 529.5148)
+      (:list 31725 533.0148)
+      (:list 32025 537.0148)
+      (:list 32250 540.7648)
+      (:list 32312 544.5148)
+      (:list 32688 548.7648)
+      (:list 32938 552.5981)
+      (:list 33000 562.4314)
+      (:list 33281 566.3689)
+      (:list 33656 570.6189)
+      (:list 33750 573.9314)
+      (:list 34500 583.2439)
+      (:list 34875 586.5564)
+      (:list 35250 590.8064)
+      (:list 36000 601.0564)
+      (:list 36075 605.3064)
+      (:list 36375 609.3064)
+      (:list 36450 612.5564)
+      (:list 36525 615.8064)
+      (:list 36600 619.0564)
+      (:list 36675 622.3064)
+      (:list 36750 625.5564)
+      (:list 36975 628.8064)
+      (:list 37050 632.0564)
+      (:list 37500 642.5564)
+      (:list 38250 647.0564)
+      (:list 38344 650.3689)
+      (:list 38438 653.6814)
+      (:list 38531 656.9939)
+      (:list 38625 660.3064)
+      (:list 38719 663.6189)
+      (:list 39000 673.5564)
+      (:list 39062 676.7647)
+      (:list 39125 679.973)
+      (:list 39250 683.3897)
+      (:list 39312 686.598)
+      (:list 39438 690.0147)
+      (:list 39688 693.848)
+      (:list 39750 697.68134)
+      (:list 39825 701.51465)
+      (:list 40125 705.51465)
+      (:list 40200 709.51465)
+      (:list 40500 719.51465)
+      (:list 40781 723.45215)
+      (:list 41062 727.38965)
+      (:list 41250 731.01465)
+      (:list 41475 734.63965)
+      (:list 41775 738.63965)
+      (:list 41850 742.63965)
+      (:list 42000 752.13965)
+      (:list 42125 755.63965)
+      (:list 42375 759.47297)
+      (:list 42438 763.3063)
+      (:list 42688 767.1396)
+      (:list 42750 770.3479)
+      (:list 42812 773.5562)
+      (:list 43312 778.2229)
+      (:list 43500 788.8896)
+      (:list 44250 793.5563)
+      (:list 44625 798.22297)
+      (:list 45000 808.47297)
+      (:list 45062 812.72297)
+      (:list 45312 816.5563)
+      (:list 45562 820.3896)
+      (:list 45625 824.2229)
+      (:list 45750 827.6396)
+      (:list 45875 831.0563)
+      (:list 46125 834.8896)
+      (:list 46188 838.7229)
+      (:list 46438 842.5562)
+      (:list 46500 852.3895)
+      (:list 46562 856.22284)
+      (:list 46625 859.43116)
+      (:list 46750 862.84784)
+      (:list 46812 866.05616)
+      (:list 46938 869.47284)
+      (:list 47000 872.68116)
+      (:list 47062 875.88947)
+      (:list 47188 879.30616)
+      (:list 47250 882.51447)
+      (:list 47344 885.82697)
+      (:list 47438 889.13947)
+      (:list 47812 893.38947)
+      (:list 48000 903.01447)
+      (:list 48250 906.63947)
+      (:list 48625 910.88947)
+      (:list 48750 914.30616)
+      (:list 48825 917.55616)
+      (:list 48900 920.80616)
+      (:list 49200 924.80616)
+      (:list 49500 934.80616)
+      (:list 49594 938.80616)
+      (:list 49969 943.05616)
+      (:list 50250 946.99366)
+      (:list 51000 956.93116)
+      (:list 51188 960.86866)
+      (:list 51562 965.11866)
+      (:list 51750 968.74366)
+      (:list 52000 972.36866)
+      (:list 52375 976.61866)
+      (:list 52500 986.03534)
+      (:list 52575 989.28534)
+      (:list 52650 992.53534)
+      (:list 52725 995.78534)
+      (:list 52800 999.03534)
+      (:list 53250 1003.53534)
+      (:list 54000 1014.03534)
+      (:list 54600 1018.53534)
+      (:list 54675 1023.03534)
+      (:list 54750 1026.2854)
+      (:list 55071 1029.5354)
+      (:list 55179 1032.8926)
+      (:list 55286 1036.2498)
+      (:list 55500 1045.964)
+      (:list 55625 1049.6782)
+      (:list 55875 1053.5116)
+      (:list 55938 1057.345)
+      (:list 56188 1061.1784)
+      (:list 56250 1064.3867)
+      (:list 56312 1067.5951)
+      (:list 56375 1070.8035)
+      (:list 56875 1075.4701)
+      (:list 57000 1086.1367)
+      (:list 57750 1090.8034)
+      (:list 58125 1095.47)
+      (:list 58219 1100.1366)
+      (:list 58500 1110.0741)
+      (:list 58650 1114.0116)
+      (:list 58950 1118.0116)
+      (:list 59025 1121.2616)
+      (:list 59100 1124.5116)
+      (:list 59175 1127.7616)
+      (:list 59250 1131.0116)
+      (:list 59550 1134.2616)
+      (:list 59700 1137.7616)
+      (:list 59775 1141.0116)
+      (:list 59850 1144.2616)
+      (:list 59925 1147.5116)
+      (:list 60000 1156.7616)
+      (:list 60094 1160.0741)
+      (:list 60188 1163.3866)
+      (:list 60281 1166.6991)
+      (:list 60375 1170.0116)
+      (:list 60656 1173.9491)
+      (:list 60750 1177.2616)
+      (:list 60938 1180.5741)
+      (:list 61031 1183.8866)
+      (:list 61125 1187.1991)
+      (:list 61406 1191.1366)
+      (:list 61500 1200.4491)
+      (:list 61688 1203.7616)
+      (:list 61938 1207.595)
+      (:list 62062 1211.0116)
+      (:list 62125 1214.22)
+      (:list 62188 1217.4284)
+      (:list 62250 1220.6367)
+      (:list 62325 1223.8451)
+      (:list 62400 1227.0951)
+      (:list 62475 1230.3451)
+      (:list 62550 1233.5951)
+      (:list 62625 1236.8451)
+      (:list 62775 1240.3451)
+      (:list 62850 1243.5951)
+      (:list 62925 1246.8451)
+      (:list 63000 1256.0951)
+      (:list 63062 1259.3035)
+      (:list 63562 1263.9701)
+      (:list 63750 1268.6367)
+      (:list 64179 1273.3034)
+      (:list 64286 1277.97)
+      (:list 64500 1287.6842)
+      (:list 65250 1291.3984)
+      (:list 65500 1295.1127)
+      (:list 66000 1305.7793)
+      (:list 66500 1310.4459)
+      (:list 66688 1315.1126)
+      (:list 66750 1318.3209)
+      (:list 67071 1321.5293)
+      (:list 67500 1331.9579)
+      (:list 67800 1335.9579)
+      (:list 68100 1339.9579)
+      (:list 68175 1343.9579)
+      (:list 68250 1347.2079)
+      (:list 68571 1350.4579)
+      (:list 69000 1360.8865)
+      (:list 70500 1371.3151)
+      (:list 71250 1375.7437)
+      (:list 71325 1380.1723)
+      (:list 71625 1384.1723)
+      (:list 71700 1388.1723)
+      (:list 72000 1398.1723)
+      (:list 73500 1408.1723)
+      (:list 73575 1412.1723)
+      (:list 73875 1416.1723)
+      (:list 73950 1420.1723)
+      (:list 74250 1424.1723)
+      (:list 74375 1428.1723)
+      (:list 74750 1432.4223)
+      (:list 75000 1442.2556)
+      (:list 75188 1446.089)
+      (:list 75562 1450.339)
+      (:list 75750 1453.964)
+      (:list 76000 1457.589)
+      (:list 76375 1461.839)
+      (:list 76500 1471.2556)
+      (:list 76625 1474.6723)
+      (:list 76750 1478.0889)
+      (:list 76812 1481.2973)
+      (:list 76938 1484.7139)
+      (:list 77000 1487.9223)
+      (:list 77062 1491.1306)
+      (:list 77188 1494.5473)
+      (:list 77250 1497.7556)
+      (:list 77344 1501.0681)
+      (:list 77438 1504.3806)
+      (:list 77531 1507.6931)
+      (:list 77625 1511.0056)
+      (:list 77719 1514.3181)
+      (:list 77812 1517.6306)
+      (:list 78000 1527.2556)
+      (:list 78075 1530.8806)
+      (:list 78675 1535.8806)
+      (:list 78750 1540.8806)
+      (:list 79500 1551.8806)
+      (:list 79929 1556.8806)
+      (:list 80250 1560.952)
+      (:list 80325 1564.5234)
+      (:list 80925 1569.5234)))
+    (:staff :g))
+   (:value
+    (:object
+     (:class voice)
+     (:slots
+      ((:onset 0)
+       (:duration 118411)
+       (:interpol (:number-or-nil (:number 50) (:t-or-nil nil)))
+       (:symbolic-date nil)
+       (:symbolic-dur nil)
+       (:symbolic-dur-extent 0)
+       (:lmidic
+        (:list
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)))
+       (:lonset
+        (:list
+         0
+         375
+         675
+         975
+         1350
+         4125
+         4406
+         5562
+         5875
+         6150
+         6525
+         6938
+         7219
+         7500
+         7750
+         8000
+         9281
+         11125
+         11375
+         11688
+         11938
+         12250
+         13438
+         13750
+         14000
+         14400
+         14775
+         15188
+         17938
+         18375
+         18750
+         19031
+         19312
+         19594
+         19875
+         20156
+         20438
+         20719
+         21000
+         21375
+         23250
+         25071
+         26312
+         28125
+         28562
+         28938
+         29344
+         29719
+         30150
+         31350
+         31725
+         32025
+         32312
+         32688
+         33000
+         33281
+         33656
+         34875
+         36075
+         36375
+         36450
+         36525
+         36600
+         36675
+         36975
+         37050
+         38250
+         38344
+         38438
+         38531
+         38625
+         38719
+         39000
+         39062
+         39125
+         39250
+         39312
+         39438
+         39825
+         40200
+         40500
+         40781
+         41062
+         41475
+         41850
+         42125
+         42438
+         42688
+         42812
+         44625
+         45062
+         45312
+         45625
+         45875
+         46188
+         46562
+         46625
+         46750
+         46812
+         46938
+         47000
+         47062
+         47188
+         47250
+         47344
+         47438
+         47812
+         48250
+         48625
+         48750
+         48825
+         48900
+         49200
+         49594
+         49969
+         51188
+         51562
+         52000
+         52375
+         52500
+         52575
+         52650
+         52725
+         52800
+         54675
+         55071
+         55179
+         55286
+         55625
+         55938
+         56188
+         56312
+         56375
+         58219
+         58650
+         58950
+         59025
+         59100
+         59175
+         59550
+         59700
+         59775
+         59850
+         59925
+         60000
+         60094
+         60188
+         60281
+         60375
+         60656
+         60938
+         61031
+         61125
+         61406
+         61688
+         61938
+         62062
+         62125
+         62188
+         62325
+         62400
+         62475
+         62550
+         62625
+         62775
+         62850
+         62925
+         63000
+         63062
+         64286
+         65500
+         66688
+         67071
+         67500
+         67800
+         68175
+         68571
+         71325
+         71700
+         73575
+         73950
+         74375
+         74750
+         75188
+         75562
+         76000
+         76375
+         76625
+         76750
+         76812
+         76938
+         77000
+         77062
+         77188
+         77250
+         77344
+         77438
+         77531
+         77625
+         77719
+         77812
+         78075
+         79929
+         81000))
+       (:ldur
+        (:list
+         (:list 374)
+         (:list 374)
+         (:list 374)
+         (:list 674)
+         (:list 3149)
+         (:list 3280)
+         (:list 4155)
+         (:list 4375)
+         (:list 4399)
+         (:list 4649)
+         (:list 4762)
+         (:list 4817)
+         (:list 4818)
+         (:list 4787)
+         (:list 4787)
+         (:list 5818)
+         (:list 7412)
+         (:list 7286)
+         (:list 7474)
+         (:list 7473)
+         (:list 7536)
+         (:list 8661)
+         (:list 8473)
+         (:list 8661)
+         (:list 8811)
+         (:list 8937)
+         (:list 9049)
+         (:list 11573)
+         (:list 11449)
+         (:list 11762)
+         (:list 11668)
+         (:list 11668)
+         (:list 11668)
+         (:list 11761)
+         (:list 11762)
+         (:list 11762)
+         (:list 11949)
+         (:list 11949)
+         (:list 12043)
+         (:list 13543)
+         (:list 14989)
+         (:list 15481)
+         (:list 16865)
+         (:list 16802)
+         (:list 16802)
+         (:list 16832)
+         (:list 16958)
+         (:list 17014)
+         (:list 17933)
+         (:list 17708)
+         (:list 17858)
+         (:list 17845)
+         (:list 17996)
+         (:list 17932)
+         (:list 17964)
+         (:list 18058)
+         (:list 18902)
+         (:list 20008)
+         (:list 19933)
+         (:list 19708)
+         (:list 19708)
+         (:list 19708)
+         (:list 19708)
+         (:list 19933)
+         (:list 19933)
+         (:list 21058)
+         (:list 20702)
+         (:list 20701)
+         (:list 20701)
+         (:list 20702)
+         (:list 20702)
+         (:list 20889)
+         (:list 20670)
+         (:list 20671)
+         (:list 20733)
+         (:list 20670)
+         (:list 20733)
+         (:list 20995)
+         (:list 21120)
+         (:list 21120)
+         (:list 21102)
+         (:list 21102)
+         (:list 21233)
+         (:list 21420)
+         (:list 21395)
+         (:list 21558)
+         (:list 21557)
+         (:list 21432)
+         (:list 23183)
+         (:list 23120)
+         (:list 22996)
+         (:list 23058)
+         (:list 23058)
+         (:list 23245)
+         (:list 23370)
+         (:list 23183)
+         (:list 23245)
+         (:list 23183)
+         (:list 23246)
+         (:list 23182)
+         (:list 23183)
+         (:list 23246)
+         (:list 23182)
+         (:list 23214)
+         (:list 23214)
+         (:list 23495)
+         (:list 23558)
+         (:list 23745)
+         (:list 23495)
+         (:list 23445)
+         (:list 23445)
+         (:list 23670)
+         (:list 23764)
+         (:list 23839)
+         (:list 24683)
+         (:list 24776)
+         (:list 24840)
+         (:list 25027)
+         (:list 24777)
+         (:list 24727)
+         (:list 24727)
+         (:list 24727)
+         (:list 24727)
+         (:list 26527)
+         (:list 26473)
+         (:list 26506)
+         (:list 26505)
+         (:list 26737)
+         (:list 26836)
+         (:list 26835)
+         (:list 26710)
+         (:list 26711)
+         (:list 28492)
+         (:list 28423)
+         (:list 28442)
+         (:list 28217)
+         (:list 28217)
+         (:list 28217)
+         (:list 28517)
+         (:list 28592)
+         (:list 28517)
+         (:list 28517)
+         (:list 28517)
+         (:list 28517)
+         (:list 28536)
+         (:list 28535)
+         (:list 28535)
+         (:list 28536)
+         (:list 28723)
+         (:list 28723)
+         (:list 28723)
+         (:list 28723)
+         (:list 28911)
+         (:list 28911)
+         (:list 29066)
+         (:list 28941)
+         (:list 28880)
+         (:list 28879)
+         (:list 28954)
+         (:list 28967)
+         (:list 28967)
+         (:list 28967)
+         (:list 28967)
+         (:list 29042)
+         (:list 28967)
+         (:list 28967)
+         (:list 28967)
+         (:list 28954)
+         (:list 30116)
+         (:list 30829)
+         (:list 31803)
+         (:list 31686)
+         (:list 32053)
+         (:list 31924)
+         (:list 31999)
+         (:list 32095)
+         (:list 34774)
+         (:list 34720)
+         (:list 36295)
+         (:list 36370)
+         (:list 36495)
+         (:list 36570)
+         (:list 36633)
+         (:list 36757)
+         (:list 36821)
+         (:list 37008)
+         (:list 36883)
+         (:list 36883)
+         (:list 36820)
+         (:list 36883)
+         (:list 36820)
+         (:list 36820)
+         (:list 36883)
+         (:list 36820)
+         (:list 36852)
+         (:list 36851)
+         (:list 36851)
+         (:list 36852)
+         (:list 36852)
+         (:list 36851)
+         (:list 37021)
+         (:list 38686)
+         (:list 38482)))
+       (:lvel
+        (:list
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)))
+       (:loffset
+        (:list
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)))
+       (:lchan
+        (:list
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)))
+       (:lport
+        (:list
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil))
+       (:llegato nil)
+       (:tree
+        (:list
+         27
+         (:list
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 4 1.0 4 1))
+            (:list 1 (:list 3.0 4 1.0 2))))
+          (:list (:list 2 4) (:list 2.0))
+          (:list (:list 2 4) (:list 1.0 (:list 1 (:list 4.0 3 1))))
+          (:list
+           (:list 2 4)
+           (:list 1.0 (:list 1 (:list 4.0 1.0 4 1.0 2))))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 2.0 4 1.0 3))
+            (:list 1 (:list 2.0 3 3))))
+          (:list (:list 2 4) (:list (:list 1 (:list 1 1 1)) 1.0))
+          (:list (:list 2 4) (:list (:list 1 (:list 3.0 4 1.0)) 1.0))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 4.0 1.0 1))
+            (:list 1 (:list 2.0 4 1.0 4 1))))
+          (:list
+           (:list 2 4)
+           (:list (:list 1 (:list 1.0 2)) (:list 1 (:list 8.0 3.0 1))))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 1.0 1 1))
+            (:list 1 (:list 2.0 4 1.0 3))))
+          (:list (:list 2 4) (:list (:list 1 (:list 1.0 3)) 1.0))
+          (:list (:list 2 4) (:list 1.0 (:list 1 (:list 8.0 3.0 1))))
+          (:list
+           (:list 2 4)
+           (:list (:list 1 (:list 1.0 1)) (:list 1 (:list 3 3 2))))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 1.0 3 3 1))
+            (:list 1 (:list 2.0 3 3))))
+          (:list (:list 2 4) (:list (:list 1 (:list 1 1)) 1.0))
+          (:list (:list 2 4) (:list 1.0 1))
+          (:list (:list 2 4) (:list 1.0 (:list 1 (:list 3.0 4))))
+          (:list (:list 2 4) (:list 1.0 (:list 1 (:list 1.0 8 3.0))))
+          (:list (:list 2 4) (:list 1.0 (:list 1 (:list 1.0 1))))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 1.0 6 4 1.0))
+            (:list 1 (:list 1.0 4 3))))
+          (:list
+           (:list 2 4)
+           (:list (:list 1 (:list 1.0 4)) (:list 1 (:list 4.0 1))))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 3.0 4 3))
+            (:list 1 (:list 1.0 6 4 1.0))))
+          (:list (:list 2 4) (:list (:list 1 (:list 3 4 1)) 1.0))
+          (:list (:list 2 4) (:list (:list 1 (:list 1.0 1)) 1.0))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 1.0 4 1 1 1 1 1))
+            (:list 1 (:list 3.0 1 6))))
+          (:list (:list 2 4) (:list 1.0 (:list 1 (:list 1 1 1 1 1 3))))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 1 1 2 1 2 4 1.0))
+            (:list 1 (:list 1.0 4 1.0 4))))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 3 3 2))
+            (:list 1 (:list 3.0 4 1.0 2))))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 2.0 4 1.0 4 1))
+            (:list 1 (:list 1.0 8 3.0))))
+          (:list (:list 2 4) (:list 1.0 (:list 1 (:list 1.0 1))))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 1.0 4 4 1.0 2))
+            (:list 1 (:list 2.0 4 1.0 4 1.0))))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 1.0 1 2 1 2 1 1 2 1))
+            (:list 1 (:list 1 1 4 2))))
+          (:list
+           (:list 2 4)
+           (:list (:list 1 (:list 2.0 3 1)) (:list 1 (:list 1 1 4 4))))
+          (:list (:list 2 4) (:list (:list 1 (:list 1.0 4 3)) 1.0))
+          (:list
+           (:list 2 4)
+           (:list (:list 1 (:list 1.0 2 1)) (:list 1 (:list 2.0 3 1))))
+          (:list (:list 2 4) (:list (:list 1 (:list 1 1 1 1 6)) 1.0))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 8.0 1.0 1))
+            (:list 1 (:list 3.0 1 1 2))))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 2.0 4 1.0 4 1))
+            (:list 1 (:list 1.0 1 8 2.0))))
+          (:list (:list 2 4) (:list 1.0 (:list 1 (:list 4.0 1.0 3))))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 2.0 4 1 1 1 1))
+            (:list 1 (:list 4.0 2 1 1 1 1))))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 1 1 1 1 3 1))
+            (:list 1 (:list 2.0 1 1 3 1))))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 3.0 4 2 1 1 1))
+            (:list 1 (:list 1.0 1 1 1 1 2 1 1 1))))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 1 8 3.0))
+            (:list 1 (:list 4.0 1.0 2))))
+          (:list (:list 2 4) (:list 1.0 (:list 1 (:list 1.0 2))))
+          (:list
+           (:list 2 4)
+           (:list (:list 1 (:list 8.0 3.0 1)) (:list 1 (:list 3.0 4))))
+          (:list
+           (:list 2 4)
+           (:list (:list 1 (:list 4 4 1.0 1)) (:list 1 (:list 3.0 4))))
+          (:list (:list 2 4) (:list 2.0))
+          (:list (:list 2 4) (:list 1.0 (:list 1 (:list 1.0 4 1.0 4))))
+          (:list (:list 2 4) (:list 2.0))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 1.0 4 1.0 4))
+            (:list 1 (:list 1.0 3 2))))
+          (:list
+           (:list 2 4)
+           (:list (:list 1 (:list 1.0 2 1)) (:list 1 (:list 2.0 3 1))))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 2.0 2 1 2 1 1 2 1))
+            (:list 1 (:list 1 1 1 1 1 1 2))))
+          (:list (:list 2 4) (:list (:list 1 (:list 1.0 8 1.0)) 1.0))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 4.0 3))
+            (:list 1 (:list 1.0 -8 -1)))))))
+       (:tempo 80)))
+     (:add-slots
+      ((:lvel
+        (:list
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)))
+       (:loffset
+        (:list
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)))
+       (:lchan
+        (:list
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)))
+       (:lport
+        (:list
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil))))))
+   (:id 6))
+  (:box
+   (:type :function)
+   (:reference omquantify)
+   (:group-id nil)
+   (:name "omquantify")
+   (:x 708)
+   (:y 274)
+   (:w 94)
+   (:h 30)
+   (:color nil)
+   (:border nil)
+   (:roundness nil)
+   (:text-font nil)
+   (:align nil)
+   (:lock nil)
+   (:lambda nil)
+   (:inputs
+    (:input
+     (:type :standard)
+     (:name "SELF")
+     (:value (:list 100))
+     (:reactive nil))
+    (:input
+     (:type :standard)
+     (:name "TEMPI")
+     (:value 80)
+     (:reactive nil))
+    (:input
+     (:type :standard)
+     (:name "MEASURES")
+     (:value (:list 2 4))
+     (:reactive nil))
+    (:input
+     (:type :standard)
+     (:name "MAX/")
+     (:value 13)
+     (:reactive nil))
+    (:input
+     (:type :optional)
+     (:name "forbid")
+     (:value (:list 9 11 13))
+     (:reactive nil)))
+   (:outputs (:output (:name "out") (:reactive nil)))
+   (:id 7))
+  (:box
+   (:type :value)
+   (:reference fixnum)
+   (:group-id nil)
+   (:name "aux111")
+   (:x 729)
+   (:y 172)
+   (:w 44)
+   (:h 30)
+   (:color
+    (:color-or-nil (:color (:color 1.0 1.0 1.0 1.0)) (:t-or-nil t)))
+   (:border nil)
+   (:roundness nil)
+   (:text-font nil)
+   (:align nil)
+   (:lock nil)
+   (:inputs)
+   (:outputs (:output (:name "value") (:reactive nil)))
+   (:value 80000)
+   (:id 8))
+  (:box
+   (:type :value)
+   (:reference cons)
+   (:group-id nil)
+   (:name "list11")
+   (:x 822)
+   (:y 27)
+   (:w 125)
+   (:h 88)
+   (:color
+    (:color-or-nil (:color (:color 1.0 1.0 1.0 1.0)) (:t-or-nil t)))
+   (:border nil)
+   (:roundness nil)
+   (:text-font nil)
+   (:align nil)
+   (:lock nil)
+   (:inputs)
+   (:outputs (:output (:name "value") (:reactive nil)))
+   (:value
+    (:list
+     (:list 0 80 6 4 4 0)
+     (:list 0 88 10 7 5 0)
+     (:list 0 45 40 12 9 7)
+     (:list 0 40 25 25 10 5)
+     (:list 0 35 25 20 6 0)
+     (:list 0 35 30 25 0 0)))
+   (:id 9))
+  (:box
+   (:library "OMTimePack")
+   (:type :function)
+   (:reference m-rhythm)
+   (:group-id nil)
+   (:name "m-rhythm")
+   (:x 425)
+   (:y 172)
+   (:w 87)
+   (:h 30)
+   (:color nil)
+   (:border nil)
+   (:roundness nil)
+   (:text-font nil)
+   (:align nil)
+   (:lock nil)
+   (:lambda nil)
+   (:inputs
+    (:input
+     (:type :standard)
+     (:name "POOL")
+     (:value (:list 0.1 0.28 0.4 1.2 1.85 2.75))
+     (:reactive nil))
+    (:input
+     (:type :standard)
+     (:name "PTABLE")
+     (:value nil)
+     (:reactive nil))
+    (:input
+     (:type :standard)
+     (:name "TOT-TIME")
+     (:value 10000)
+     (:reactive nil))
+    (:input
+     (:type :standard)
+     (:name "INIT-CONDS")
+     (:value 5)
+     (:reactive nil)))
+   (:outputs
+    (:output (:name "out0") (:reactive nil))
+    (:output (:name "out1") (:reactive nil))
+    (:output (:name "out2") (:reactive nil)))
+   (:id 10))
+  (:box
+   (:type :value)
+   (:reference cons)
+   (:group-id nil)
+   (:name "aux2")
+   (:x 276)
+   (:y 110)
+   (:w 164)
+   (:h 30)
+   (:color
+    (:color-or-nil (:color (:color 1.0 1.0 1.0 1.0)) (:t-or-nil t)))
+   (:border nil)
+   (:roundness nil)
+   (:text-font nil)
+   (:align nil)
+   (:lock nil)
+   (:inputs)
+   (:outputs (:output (:name "value") (:reactive nil)))
+   (:value (:list 88 280 400 1200 1850 2750))
+   (:id 11))
+  (:box
+   (:type :object)
+   (:reference voice)
+   (:group-id nil)
+   (:name "VOICE1")
+   (:x 357)
+   (:y 334)
+   (:w 205)
+   (:h 89)
+   (:color nil)
+   (:border nil)
+   (:roundness nil)
+   (:text-font nil)
+   (:align :center)
+   (:name "VOICE1")
+   (:display :mini-view)
+   (:showname nil)
+   (:show-markers t)
+   (:group-id nil)
+   (:lock nil)
+   (:lambda nil)
+   (:inputs
+    (:input
+     (:type :standard)
+     (:name "SELF")
+     (:value nil)
+     (:reactive nil))
+    (:input
+     (:type :standard)
+     (:name "TREE")
+     (:value (:list ? (:list (:list |4//4| (:list 1 1 1 1)))))
+     (:reactive nil))
+    (:input
+     (:type :standard)
+     (:name "LMIDIC")
+     (:value (:list (:list 6000)))
+     (:reactive nil))
+    (:input
+     (:type :standard)
+     (:name "TEMPO")
+     (:value 80)
+     (:reactive nil)))
+   (:outputs
+    (:output (:name "SELF") (:reactive nil))
+    (:output (:name "TREE") (:reactive nil))
+    (:output (:name "LMIDIC") (:reactive nil))
+    (:output (:name "TEMPO") (:reactive nil)))
+   (:window (:size nil) (:position nil))
+   (:edition-params
+    (:time-map
+     (:list
+      (:list -1000 0)
+      (:list 0 7.5)
+      (:list 300 11.5)
+      (:list 375 15.5)
+      (:list 675 19.5)
+      (:list 750 22.75)
+      (:list 964 26.0)
+      (:list 1393 30.428572)
+      (:list 1500 40.857144)
+      (:list 2250 45.285714)
+      (:list 2812 49.714283)
+      (:list 3000 59.339283)
+      (:list 3214 62.964283)
+      (:list 3643 67.39285)
+      (:list 3750 71.82143)
+      (:list 4500 82.25)
+      (:list 5062 86.67857)
+      (:list 5250 90.30357)
+      (:list 6000 99.92857)
+      (:list 6250 103.55357)
+      (:list 6750 108.22024)
+      (:list 7250 112.8869)
+      (:list 7438 117.553566)
+      (:list 7500 126.7619)
+      (:list 8250 129.97025)
+      (:list 8688 133.17858)
+      (:list 8938 137.0119)
+      (:list 9000 146.22023)
+      (:list 9250 149.42856)
+      (:list 9500 153.26189)
+      (:list 9750 157.09522)
+      (:list 10500 166.92855)
+      (:list 11250 170.76187)
+      (:list 11344 174.5952)
+      (:list 11625 178.5327)
+      (:list 11906 182.4702)
+      (:list 12000 191.7827)
+      (:list 12250 195.0952)
+      (:list 12312 198.4077)
+      (:list 12688 202.6577)
+      (:list 12750 205.86603)
+      (:list 12964 209.07436)
+      (:list 13393 213.50293)
+      (:list 13500 222.86008)
+      (:list 15000 232.21723)
+      (:list 15750 235.57437)
+      (:list 16050 238.93152)
+      (:list 16125 242.28867)
+      (:list 16425 246.28867)
+      (:list 16500 255.53867)
+      (:list 16688 258.78867)
+      (:list 16969 262.72617)
+      (:list 17250 266.66367)
+      (:list 17625 270.91367)
+      (:list 18000 281.16367)
+      (:list 18062 285.41367)
+      (:list 18312 289.247)
+      (:list 18562 293.08035)
+      (:list 18625 296.9137)
+      (:list 18750 300.33035)
+      (:list 18875 303.747)
+      (:list 19125 307.58035)
+      (:list 19188 311.4137)
+      (:list 19438 315.24704)
+      (:list 19500 324.45538)
+      (:list 19750 327.66373)
+      (:list 20250 332.33038)
+      (:list 21000 342.99704)
+      (:list 21600 347.6637)
+      (:list 21750 351.1637)
+      (:list 21875 354.6637)
+      (:list 22125 358.49704)
+      (:list 22375 362.33038)
+      (:list 22438 366.16373)
+      (:list 22500 375.37207)
+      (:list 22688 378.5804)
+      (:list 22969 382.5179)
+      (:list 23250 386.4554)
+      (:list 23400 390.3929)
+      (:list 23700 394.3929)
+      (:list 23775 398.3929)
+      (:list 24000 408.1429)
+      (:list 24750 411.8929)
+      (:list 25000 415.6429)
+      (:list 25500 426.30957)
+      (:list 26250 430.97623)
+      (:list 26850 435.64288)
+      (:list 27000 445.14288)
+      (:list 27750 448.64288)
+      (:list 28031 452.14288)
+      (:list 28406 456.39288)
+      (:list 28500 466.64288)
+      (:list 30000 476.89288)
+      (:list 30750 481.14288)
+      (:list 30812 485.39288)
+      (:list 31188 489.64288)
+      (:list 31438 493.47623)
+      (:list 31500 503.30957)
+      (:list 31875 507.55957)
+      (:list 32156 511.49707)
+      (:list 32250 514.8096)
+      (:list 32438 518.1221)
+      (:list 32719 522.0596)
+      (:list 33000 531.9971)
+      (:list 33281 535.9346)
+      (:list 33562 539.8721)
+      (:list 33750 543.4971)
+      (:list 33844 547.1221)
+      (:list 34125 551.0596)
+      (:list 34406 554.9971)
+      (:list 34500 564.3096)
+      (:list 34688 567.6221)
+      (:list 34969 571.5596)
+      (:list 35250 575.4971)
+      (:list 35531 579.4346)
+      (:list 35812 583.3721)
+      (:list 36000 592.9971)
+      (:list 36062 596.6221)
+      (:list 36312 600.4554)
+      (:list 36375 604.2887)
+      (:list 36625 608.122)
+      (:list 36750 611.5387)
+      (:list 37500 620.9554)
+      (:list 38250 624.3721)
+      (:list 38475 627.78876)
+      (:list 38775 631.78876)
+      (:list 39000 641.53876)
+      (:list 39750 645.28876)
+      (:list 39964 649.03876)
+      (:list 40393 653.46735)
+      (:list 40500 663.89594)
+      (:list 41156 668.3245)
+      (:list 41250 671.637)
+      (:list 41438 674.9495)
+      (:list 41719 678.887)
+      (:list 42000 688.8245)
+      (:list 42281 692.762)
+      (:list 42562 696.6995)
+      (:list 42750 700.3245)
+      (:list 42844 703.9495)
+      (:list 43125 707.887)
+      (:list 43406 711.8245)
+      (:list 43500 721.137)
+      (:list 43688 724.4495)
+      (:list 43969 728.387)
+      (:list 44250 732.3245)
+      (:list 44531 736.262)
+      (:list 44812 740.1995)
+      (:list 45000 749.8245)
+      (:list 45094 753.4495)
+      (:list 45375 757.387)
+      (:list 45656 761.3245)
+      (:list 45750 764.637)
+      (:list 45938 767.9495)
+      (:list 46219 771.887)
+      (:list 46500 781.8245)
+      (:list 46781 785.762)
+      (:list 47062 789.6995)
+      (:list 47250 793.3245)
+      (:list 47325 796.9495)
+      (:list 47625 800.9495)
+      (:list 47925 804.9495)
+      (:list 48000 814.9495)
+      (:list 48750 818.9495)
+      (:list 49250 822.9495)
+      (:list 49438 826.9495)
+      (:list 49500 836.15784)
+      (:list 49875 839.36615)
+      (:list 50125 843.19947)
+      (:list 50250 846.61615)
+      (:list 50400 850.03284)
+      (:list 50700 854.03284)
+      (:list 51000 864.03284)
+      (:list 51250 867.86615)
+      (:list 51500 871.69947)
+      (:list 51750 875.5328)
+      (:list 51812 879.3661)
+      (:list 52062 883.1994)
+      (:list 52312 887.0327)
+      (:list 52375 890.866)
+      (:list 52500 900.2827)
+      (:list 52625 903.6994)
+      (:list 52875 907.5327)
+      (:list 52938 911.366)
+      (:list 53188 915.19935)
+      (:list 53250 918.40766)
+      (:list 53475 921.61597)
+      (:list 53775 925.61597)
+      (:list 54000 935.36597)
+      (:list 54062 939.11597)
+      (:list 54562 943.78266)
+      (:list 54750 948.44935)
+      (:list 55250 953.116)
+      (:list 55500 962.94935)
+      (:list 57000 972.78266)
+      (:list 57750 976.61597)
+      (:list 58031 980.4493)
+      (:list 58406 984.6993)
+      (:list 58500 994.0118)
+      (:list 59250 997.3243)
+      (:list 59625 1000.6368)
+      (:list 59875 1004.4701)
+      (:list 60000 1013.8868)
+      (:list 60150 1017.30347)
+      (:list 60450 1021.30347)
+      (:list 60750 1025.3035)
+      (:list 61000 1029.1369)
+      (:list 61250 1032.9702)
+      (:list 61500 1042.8036)
+      (:list 61562 1046.637)
+      (:list 61812 1050.4703)
+      (:list 62062 1054.3037)
+      (:list 62125 1058.1371)
+      (:list 62250 1061.5537)
+      (:list 63000 1070.9703)
+      (:list 63321 1074.387)
+      (:list 63750 1078.8156)
+      (:list 64500 1089.2442)
+      (:list 64750 1093.0775)
+      (:list 65250 1097.7442)
+      (:list 66000 1108.4108)
+      (:list 66281 1112.3483)
+      (:list 66562 1116.2858)
+      (:list 66750 1119.9108)
+      (:list 66975 1123.5358)
+      (:list 67275 1127.5358)
+      (:list 67350 1131.5358)
+      (:list 67500 1141.0358)
+      (:list 67625 1144.5358)
+      (:list 67875 1148.3692)
+      (:list 67938 1152.2025)
+      (:list 68188 1156.0359)
+      (:list 68250 1159.2443)
+      (:list 68475 1162.4526)
+      (:list 68775 1166.4526)
+      (:list 69000 1176.2026)
+      (:list 69062 1179.9526)
+      (:list 69312 1183.786)
+      (:list 69562 1187.6194)
+      (:list 69625 1191.4528)
+      (:list 69750 1194.8694)
+      (:list 70000 1198.286)
+      (:list 70250 1202.1194)
+      (:list 70500 1211.9528)
+      (:list 71250 1215.7861)
+      (:list 71475 1219.6195)
+      (:list 72000 1230.3695)
+      (:list 72600 1235.1195)
+      (:list 72675 1239.8695)
+      (:list 72750 1243.1195)
+      (:list 72975 1246.3695)
+      (:list 73275 1250.3695)
+      (:list 73350 1254.3695)
+      (:list 73500 1263.8695)
+      (:list 74250 1267.3695)
+      (:list 74550 1270.8695)
+      (:list 74850 1274.8695)
+      (:list 75000 1284.3695)
+      (:list 75125 1287.8695)
+      (:list 75375 1291.7029)
+      (:list 75750 1295.9529)
+      (:list 76500 1306.2029)
+      (:list 77250 1310.4529)
+      (:list 77531 1314.3904)
+      (:list 77812 1318.3279)
+      (:list 78000 1327.9529)
+      (:list 78094 1331.5779)
+      (:list 78750 1336.7654)
+      (:list 79179 1341.9529)
+      (:list 79286 1347.1404)
+      (:list 79500 1356.8546)
+      (:list 79688 1360.5689)
+      (:list 79969 1364.5064)
+      (:list 80250 1367.9439)))
+    (:staff :g))
+   (:value
+    (:object
+     (:class voice)
+     (:slots
+      ((:onset 0)
+       (:duration 121241)
+       (:interpol (:number-or-nil (:number 50) (:t-or-nil nil)))
+       (:symbolic-date nil)
+       (:symbolic-dur nil)
+       (:symbolic-dur-extent 0)
+       (:lmidic
+        (:list
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)))
+       (:lonset
+        (:list
+         0
+         375
+         675
+         964
+         2812
+         3214
+         5062
+         6250
+         7438
+         8688
+         8938
+         9250
+         9500
+         11344
+         11625
+         11906
+         12312
+         12688
+         12964
+         13393
+         16125
+         16425
+         16688
+         16969
+         17250
+         17625
+         18062
+         18312
+         18625
+         18875
+         19188
+         19438
+         19750
+         21600
+         21875
+         22125
+         22438
+         22688
+         22969
+         23400
+         23775
+         25000
+         26850
+         28031
+         30812
+         31188
+         31500
+         31875
+         32156
+         32438
+         32719
+         33000
+         33281
+         33562
+         33844
+         34125
+         34406
+         34688
+         34969
+         35250
+         35531
+         35812
+         36062
+         36375
+         36625
+         38475
+         38775
+         39964
+         41156
+         41438
+         41719
+         42000
+         42281
+         42562
+         42844
+         43125
+         43406
+         43688
+         43969
+         44250
+         44531
+         44812
+         45094
+         45375
+         45656
+         45938
+         46219
+         46500
+         46781
+         47062
+         47325
+         47625
+         49438
+         49875
+         50125
+         50400
+         50700
+         51000
+         51250
+         51500
+         51812
+         52062
+         52375
+         52625
+         52938
+         53188
+         53475
+         53775
+         54062
+         55250
+         58031
+         58406
+         59625
+         59875
+         60150
+         60450
+         60750
+         61000
+         61250
+         61562
+         61812
+         62125
+         63321
+         64500
+         64750
+         66000
+         66281
+         66562
+         66975
+         67350
+         67625
+         67938
+         68188
+         68475
+         68775
+         69062
+         69312
+         69625
+         70000
+         70250
+         71475
+         72675
+         72975
+         73350
+         74550
+         74850
+         75125
+         75375
+         77250
+         77531
+         77812
+         78094
+         79286
+         79688
+         79969
+         81000))
+       (:ldur
+        (:list
+         (:list 374)
+         (:list 374)
+         (:list 363)
+         (:list 2137)
+         (:list 2110)
+         (:list 3771)
+         (:list 4530)
+         (:list 5529)
+         (:list 6279)
+         (:list 6466)
+         (:list 6529)
+         (:list 6717)
+         (:list 8311)
+         (:list 8342)
+         (:list 8342)
+         (:list 8467)
+         (:list 8749)
+         (:list 8649)
+         (:list 9016)
+         (:list 11319)
+         (:list 11512)
+         (:list 11475)
+         (:list 11681)
+         (:list 11681)
+         (:list 11775)
+         (:list 11837)
+         (:list 11713)
+         (:list 11775)
+         (:list 11775)
+         (:list 11962)
+         (:list 11962)
+         (:list 12024)
+         (:list 13812)
+         (:list 13587)
+         (:list 13687)
+         (:list 13750)
+         (:list 13749)
+         (:list 13968)
+         (:list 14118)
+         (:list 14212)
+         (:list 15137)
+         (:list 16762)
+         (:list 17444)
+         (:list 20075)
+         (:list 20075)
+         (:list 20012)
+         (:list 20137)
+         (:list 20044)
+         (:list 20044)
+         (:list 20231)
+         (:list 20231)
+         (:list 20231)
+         (:list 20231)
+         (:list 20232)
+         (:list 20325)
+         (:list 20325)
+         (:list 20325)
+         (:list 20512)
+         (:list 20512)
+         (:list 20512)
+         (:list 20513)
+         (:list 20482)
+         (:list 20607)
+         (:list 20606)
+         (:list 22206)
+         (:list 22381)
+         (:list 23270)
+         (:list 24238)
+         (:list 24090)
+         (:list 24277)
+         (:list 24277)
+         (:list 24278)
+         (:list 24278)
+         (:list 24278)
+         (:list 24371)
+         (:list 24371)
+         (:list 24372)
+         (:list 24558)
+         (:list 24559)
+         (:list 24559)
+         (:list 24559)
+         (:list 24559)
+         (:list 24652)
+         (:list 24653)
+         (:list 24653)
+         (:list 24840)
+         (:list 24840)
+         (:list 24840)
+         (:list 24840)
+         (:list 24822)
+         (:list 24934)
+         (:list 26446)
+         (:list 26583)
+         (:list 26771)
+         (:list 26796)
+         (:list 26971)
+         (:list 26971)
+         (:list 26921)
+         (:list 26921)
+         (:list 26984)
+         (:list 26984)
+         (:list 27047)
+         (:list 27046)
+         (:list 27234)
+         (:list 27233)
+         (:list 27271)
+         (:list 27509)
+         (:list 27496)
+         (:list 28459)
+         (:list 30740)
+         (:list 30865)
+         (:list 31709)
+         (:list 31865)
+         (:list 31890)
+         (:list 32065)
+         (:list 32065)
+         (:list 32015)
+         (:list 32015)
+         (:list 32078)
+         (:list 32078)
+         (:list 32141)
+         (:list 33086)
+         (:list 34140)
+         (:list 33961)
+         (:list 34961)
+         (:list 34743)
+         (:list 34743)
+         (:list 34875)
+         (:list 35062)
+         (:list 35037)
+         (:list 35199)
+         (:list 35199)
+         (:list 35236)
+         (:list 35474)
+         (:list 35462)
+         (:list 35487)
+         (:list 35549)
+         (:list 35674)
+         (:list 35799)
+         (:list 36774)
+         (:list 37724)
+         (:list 37499)
+         (:list 37799)
+         (:list 38699)
+         (:list 38849)
+         (:list 38824)
+         (:list 38924)
+         (:list 40549)
+         (:list 40455)
+         (:list 40456)
+         (:list 40456)
+         (:list 41459)
+         (:list 41205)
+         (:list 41272)
+         (:list 41272)))
+       (:lvel
+        (:list
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)))
+       (:loffset
+        (:list
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)))
+       (:lchan
+        (:list
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)))
+       (:lport
+        (:list
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil))
+       (:llegato nil)
+       (:tree
+        (:list
+         27
+         (:list
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 4 1.0 4 1))
+            (:list 1 (:list 2.0 4 1.0))))
+          (:list (:list 2 4) (:list 1.0 (:list 1 (:list 3.0 1))))
+          (:list (:list 2 4) (:list (:list 1 (:list 2.0 4 1.0)) 1.0))
+          (:list (:list 2 4) (:list (:list 1 (:list 3.0 1)) 1.0))
+          (:list
+           (:list 2 4)
+           (:list (:list 1 (:list 1.0 2)) (:list 1 (:list 8.0 3.0 1))))
+          (:list (:list 2 4) (:list 1.0 (:list 1 (:list 7.0 4 1))))
+          (:list (:list 2 4) (:list (:list 1 (:list 1.0 1 1)) 1.0))
+          (:list (:list 2 4) (:list 1.0 (:list 1 (:list 1.0 3 3 1))))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 4.0 1.0 6 1))
+            (:list 1 (:list 2.0 4 1))))
+          (:list (:list 2 4) (:list 2.0))
+          (:list (:list 2 4) (:list 1.0 (:list 1 (:list 4.0 1.0 4 1))))
+          (:list
+           (:list 2 4)
+           (:list (:list 1 (:list 2.0 3 3)) (:list 1 (:list 1 1))))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 1.0 4 4 1.0 2))
+            (:list 1 (:list 2.0 4 1.0 4 1))))
+          (:list (:list 2 4) (:list (:list 1 (:list 1.0 2)) 1.0))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 4.0 1))
+            (:list 1 (:list 2.0 4 4 1.0 1))))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 2.0 3 3))
+            (:list 1 (:list 2.0 4 1.0 3))))
+          (:list (:list 2 4) (:list 1.0 (:list 1 (:list 1.0 2))))
+          (:list (:list 2 4) (:list 1.0 (:list 1 (:list 4.0 1))))
+          (:list (:list 2 4) (:list 1.0 (:list 1 (:list 3.0 4 1.0))))
+          (:list (:list 2 4) (:list 2.0))
+          (:list (:list 2 4) (:list 1.0 (:list 1 (:list 1.0 6 4 1.0))))
+          (:list
+           (:list 2 4)
+           (:list (:list 1 (:list 4 3 1)) (:list 1 (:list 2.0 3 3))))
+          (:list
+           (:list 2 4)
+           (:list (:list 1 (:list 3 3 2)) (:list 1 (:list 1.0 3 3 1))))
+          (:list
+           (:list 2 4)
+           (:list (:list 1 (:list 2.0 3 3)) (:list 1 (:list 3 3 2))))
+          (:list
+           (:list 2 4)
+           (:list (:list 1 (:list 1.0 4 1.0 4 2)) 1.0))
+          (:list (:list 2 4) (:list 1.0 (:list 1 (:list 3.0 4 3))))
+          (:list (:list 2 4) (:list 1.0 (:list 1 (:list 2.0 4 1.0))))
+          (:list
+           (:list 2 4)
+           (:list (:list 1 (:list 7.0 1)) (:list 1 (:list 2.0 3 3))))
+          (:list
+           (:list 2 4)
+           (:list (:list 1 (:list 3 3 2)) (:list 1 (:list 1.0 3 3 1))))
+          (:list
+           (:list 2 4)
+           (:list (:list 1 (:list 2.0 3 3)) (:list 1 (:list 3 3 2))))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 1.0 3 3 1))
+            (:list 1 (:list 2.0 3 3))))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 3 3 2))
+            (:list 1 (:list 1.0 4 4 1.0))))
+          (:list (:list 2 4) (:list 1.0 (:list 1 (:list 8.0 3.0 1))))
+          (:list
+           (:list 2 4)
+           (:list (:list 1 (:list 3.0 2 1)) (:list 1 (:list 1.0 2 2))))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 1 1 1))
+            (:list 1 (:list 1.0 4 4 1.0 2))))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 2.0 4 1.0 4 1))
+            (:list 1 (:list 3.0 4 3))))
+          (:list
+           (:list 2 4)
+           (:list (:list 1 (:list 1.0 8 3.0)) (:list 1 (:list 2.0 1))))
+          (:list (:list 2 4) (:list 2.0))
+          (:list (:list 2 4) (:list 1.0 (:list 1 (:list 3.0 4 1))))
+          (:list (:list 2 4) (:list 1.0 (:list 1 (:list 3.0 2 1))))
+          (:list
+           (:list 2 4)
+           (:list (:list 1 (:list 1.0 2 2)) (:list 1 (:list 1 1 1))))
+          (:list
+           (:list 2 4)
+           (:list (:list 1 (:list 1.0 4 4 1.0 2)) 1.0))
+          (:list (:list 2 4) (:list (:list 1 (:list 3.0 4)) 1.0))
+          (:list (:list 2 4) (:list (:list 1 (:list 1 2)) 1.0))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 3 3 2))
+            (:list 1 (:list 3.0 4 1.0 2))))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 2.0 4 1.0 4 1))
+            (:list 1 (:list 3.0 4 3))))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 1.0 4 4 1.0 2))
+            (:list 1 (:list 1.0 1 1))))
+          (:list (:list 2 4) (:list 1.0 (:list 1 (:list 3.0 7))))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 8.0 1.0 1))
+            (:list 1 (:list 3.0 4 1.0 2))))
+          (:list (:list 2 4) (:list 1.0 (:list 1 (:list 2.0 2 1))))
+          (:list (:list 2 4) (:list (:list 1 (:list 1.0 2 3)) 1.0))
+          (:list (:list 2 4) (:list 1.0 (:list 1 (:list 3 3 2))))
+          (:list
+           (:list 2 4)
+           (:list (:list 1 (:list 1.0 7)) (:list 1 (:list 4.0 1.0 2))))
+          (:list (:list 2 4) (:list (:list 1 (:list 2.0 3 3)) -1)))))
+       (:tempo 80)))
+     (:add-slots
+      ((:lvel
+        (:list
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)))
+       (:loffset
+        (:list
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)))
+       (:lchan
+        (:list
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)))
+       (:lport
+        (:list
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil))))))
+   (:id 12))
+  (:box
+   (:type :function)
+   (:reference omquantify)
+   (:group-id nil)
+   (:name "omquantify")
+   (:x 468)
+   (:y 271)
+   (:w 94)
+   (:h 30)
+   (:color nil)
+   (:border nil)
+   (:roundness nil)
+   (:text-font nil)
+   (:align nil)
+   (:lock nil)
+   (:lambda nil)
+   (:inputs
+    (:input
+     (:type :standard)
+     (:name "SELF")
+     (:value (:list 100))
+     (:reactive nil))
+    (:input
+     (:type :standard)
+     (:name "TEMPI")
+     (:value 80)
+     (:reactive nil))
+    (:input
+     (:type :standard)
+     (:name "MEASURES")
+     (:value (:list 2 4))
+     (:reactive nil))
+    (:input
+     (:type :standard)
+     (:name "MAX/")
+     (:value 13)
+     (:reactive nil))
+    (:input
+     (:type :optional)
+     (:name "forbid")
+     (:value (:list 9 11 13))
+     (:reactive nil)))
+   (:outputs (:output (:name "out") (:reactive nil)))
+   (:id 13))
+  (:box
+   (:type :value)
+   (:reference fixnum)
+   (:group-id nil)
+   (:name "aux11")
+   (:x 478)
+   (:y 140)
+   (:w 44)
+   (:h 30)
+   (:color
+    (:color-or-nil (:color (:color 1.0 1.0 1.0 1.0)) (:t-or-nil t)))
+   (:border nil)
+   (:roundness nil)
+   (:text-font nil)
+   (:align nil)
+   (:lock nil)
+   (:inputs)
+   (:outputs (:output (:name "value") (:reactive nil)))
+   (:value 80000)
+   (:id 14))
+  (:box
+   (:type :value)
+   (:reference cons)
+   (:group-id nil)
+   (:name "list1")
+   (:x 389)
+   (:y 30)
+   (:w 133)
+   (:h 93)
+   (:color
+    (:color-or-nil (:color (:color 1.0 1.0 1.0 1.0)) (:t-or-nil t)))
+   (:border nil)
+   (:roundness nil)
+   (:text-font nil)
+   (:align nil)
+   (:lock nil)
+   (:inputs)
+   (:outputs (:output (:name "value") (:reactive nil)))
+   (:value
+    (:list
+     (:list 0 80 6 4 4 0)
+     (:list 0 88 10 7 5 0)
+     (:list 0 45 40 12 9 7)
+     (:list 0 40 25 25 10 5)
+     (:list 0 35 25 20 6 0)
+     (:list 0 35 30 25 0 0)))
+   (:id 15))
+  (:box
+   (:type :value)
+   (:reference cons)
+   (:group-id nil)
+   (:name "list")
+   (:x 152)
+   (:y 18)
+   (:w 135)
+   (:h 90)
+   (:color
+    (:color-or-nil (:color (:color 1.0 1.0 1.0 1.0)) (:t-or-nil t)))
+   (:border nil)
+   (:roundness nil)
+   (:text-font nil)
+   (:align nil)
+   (:lock nil)
+   (:inputs)
+   (:outputs (:output (:name "value") (:reactive nil)))
+   (:value
+    (:list
+     (:list 82 10 5 3 3 0)
+     (:list 45 60 15 10 7 5)
+     (:list 35 30 40 12 9 7)
+     (:list 18 25 25 20 10 5)
+     (:list 0 20 25 20 0 0)
+     (:list 0 4 30 25 0 0)))
+   (:id 16))
+  (:box
+   (:library "OMTimePack")
+   (:type :function)
+   (:reference m-rhythm)
+   (:group-id nil)
+   (:name "m-rhythm")
+   (:x 190)
+   (:y 142)
+   (:w 87)
+   (:h 30)
+   (:color nil)
+   (:border nil)
+   (:roundness nil)
+   (:text-font nil)
+   (:align nil)
+   (:lock nil)
+   (:lambda nil)
+   (:inputs
+    (:input
+     (:type :standard)
+     (:name "POOL")
+     (:value (:list 0.1 0.28 0.4 1.2 1.85 2.75))
+     (:reactive nil))
+    (:input
+     (:type :standard)
+     (:name "PTABLE")
+     (:value nil)
+     (:reactive nil))
+    (:input
+     (:type :standard)
+     (:name "TOT-TIME")
+     (:value 10000)
+     (:reactive nil))
+    (:input
+     (:type :standard)
+     (:name "INIT-CONDS")
+     (:value 5)
+     (:reactive nil)))
+   (:outputs
+    (:output (:name "out0") (:reactive nil))
+    (:output (:name "out1") (:reactive nil))
+    (:output (:name "out2") (:reactive nil)))
+   (:id 17))
+  (:box
+   (:type :value)
+   (:reference cons)
+   (:group-id nil)
+   (:name "aux")
+   (:x 12)
+   (:y 110)
+   (:w 164)
+   (:h 30)
+   (:color
+    (:color-or-nil (:color (:color 1.0 1.0 1.0 1.0)) (:t-or-nil t)))
+   (:border nil)
+   (:roundness nil)
+   (:text-font nil)
+   (:align nil)
+   (:lock nil)
+   (:inputs)
+   (:outputs (:output (:name "value") (:reactive nil)))
+   (:value (:list 88 280 400 1200 1850 2750))
+   (:id 18))
+  (:box
+   (:type :object)
+   (:reference voice)
+   (:group-id nil)
+   (:name "VOICE")
+   (:x 82)
+   (:y 308)
+   (:w 230)
+   (:h 88)
+   (:color nil)
+   (:border nil)
+   (:roundness nil)
+   (:text-font nil)
+   (:align :center)
+   (:name "VOICE")
+   (:display :mini-view)
+   (:showname nil)
+   (:show-markers t)
+   (:group-id nil)
+   (:lock nil)
+   (:lambda nil)
+   (:inputs
+    (:input
+     (:type :standard)
+     (:name "SELF")
+     (:value nil)
+     (:reactive nil))
+    (:input
+     (:type :standard)
+     (:name "TREE")
+     (:value (:list ? (:list (:list |4//4| (:list 1 1 1 1)))))
+     (:reactive nil))
+    (:input
+     (:type :standard)
+     (:name "LMIDIC")
+     (:value (:list (:list 6000)))
+     (:reactive nil))
+    (:input
+     (:type :standard)
+     (:name "TEMPO")
+     (:value 80)
+     (:reactive nil)))
+   (:outputs
+    (:output (:name "SELF") (:reactive nil))
+    (:output (:name "TREE") (:reactive nil))
+    (:output (:name "LMIDIC") (:reactive nil))
+    (:output (:name "TEMPO") (:reactive nil)))
+   (:window (:size nil) (:position nil))
+   (:edition-params
+    (:time-map
+     (:list
+      (:list -1000 0)
+      (:list 0 7.5)
+      (:list 375 11.75)
+      (:list 500 15.166667)
+      (:list 750 19.0)
+      (:list 1500 30.5)
+      (:list 1875 36.0)
+      (:list 1969 41.5)
+      (:list 2250 45.4375)
+      (:list 2375 49.375)
+      (:list 2750 53.625)
+      (:list 3000 63.458332)
+      (:list 3188 67.291664)
+      (:list 3562 71.541664)
+      (:list 3750 75.166664)
+      (:list 4500 84.791664)
+      (:list 6000 94.416664)
+      (:list 6321 98.041664)
+      (:list 6750 102.47024)
+      (:list 7500 112.89881)
+      (:list 8250 118.39881)
+      (:list 8625 123.89881)
+      (:list 8719 129.3988)
+      (:list 9000 139.3363)
+      (:list 9094 143.2738)
+      (:list 9375 147.2113)
+      (:list 9469 150.5238)
+      (:list 9562 153.8363)
+      (:list 9656 157.1488)
+      (:list 9750 160.4613)
+      (:list 9938 163.7738)
+      (:list 10031 167.0863)
+      (:list 10125 170.3988)
+      (:list 10219 173.7113)
+      (:list 10312 177.0238)
+      (:list 10406 180.3363)
+      (:list 10500 189.6488)
+      (:list 10575 192.8988)
+      (:list 10650 196.1488)
+      (:list 10725 199.3988)
+      (:list 11250 204.1488)
+      (:list 12000 214.8988)
+      (:list 12600 219.6488)
+      (:list 12750 223.1488)
+      (:list 12975 226.6488)
+      (:list 13050 229.8988)
+      (:list 13125 233.1488)
+      (:list 13275 236.6488)
+      (:list 13350 239.8988)
+      (:list 13425 243.1488)
+      (:list 13500 252.3988)
+      (:list 13594 255.7113)
+      (:list 13688 259.0238)
+      (:list 13781 262.3363)
+      (:list 14156 266.5863)
+      (:list 14250 269.8988)
+      (:list 14550 273.2113)
+      (:list 14850 277.2113)
+      (:list 15000 286.7113)
+      (:list 15150 290.2113)
+      (:list 15225 293.4613)
+      (:list 15300 296.7113)
+      (:list 15375 299.9613)
+      (:list 15675 303.9613)
+      (:list 15750 307.2113)
+      (:list 16071 310.4613)
+      (:list 16500 320.88986)
+      (:list 16562 324.0982)
+      (:list 16625 327.30655)
+      (:list 16750 330.7232)
+      (:list 16812 333.93155)
+      (:list 16938 337.3482)
+      (:list 17000 340.55655)
+      (:list 17250 344.3899)
+      (:list 18000 354.22324)
+      (:list 18214 358.05658)
+      (:list 18643 362.48514)
+      (:list 18750 366.9137)
+      (:list 19500 377.34225)
+      (:list 20062 381.7708)
+      (:list 20250 385.3958)
+      (:list 20438 389.0208)
+      (:list 20531 392.3333)
+      (:list 20625 395.6458)
+      (:list 20719 398.9583)
+      (:list 20812 402.2708)
+      (:list 20906 405.5833)
+      (:list 21000 414.8958)
+      (:list 21075 418.1458)
+      (:list 21150 421.3958)
+      (:list 21450 425.3958)
+      (:list 21750 429.3958)
+      (:list 22500 439.3958)
+      (:list 23250 443.3958)
+      (:list 23312 447.3958)
+      (:list 23688 451.6458)
+      (:list 23938 455.47916)
+      (:list 24000 465.3125)
+      (:list 25500 475.14584)
+      (:list 25562 478.9792)
+      (:list 26062 483.64584)
+      (:list 26250 488.3125)
+      (:list 26625 492.97916)
+      (:list 26719 497.6458)
+      (:list 26812 500.9583)
+      (:list 26906 504.2708)
+      (:list 27000 513.5833)
+      (:list 27281 517.5208)
+      (:list 27375 520.8333)
+      (:list 27469 524.1458)
+      (:list 27562 527.4583)
+      (:list 27656 530.7708)
+      (:list 27750 534.0833)
+      (:list 27844 537.3958)
+      (:list 28219 541.6458)
+      (:list 28312 544.9583)
+      (:list 28406 548.2708)
+      (:list 28500 557.5833)
+      (:list 28562 560.7916)
+      (:list 28625 563.99994)
+      (:list 28875 567.83326)
+      (:list 28938 571.66657)
+      (:list 29188 575.4999)
+      (:list 29250 578.7082)
+      (:list 29325 581.9165)
+      (:list 29400 585.1665)
+      (:list 29475 588.4165)
+      (:list 29550 591.6665)
+      (:list 29625 594.9165)
+      (:list 29775 598.4165)
+      (:list 29850 601.6665)
+      (:list 29925 604.9165)
+      (:list 30000 614.1665)
+      (:list 30300 617.4165)
+      (:list 30600 621.4165)
+      (:list 30675 624.6665)
+      (:list 30750 627.9165)
+      (:list 31125 632.1665)
+      (:list 31500 642.4165)
+      (:list 32250 646.6665)
+      (:list 32375 650.9165)
+      (:list 32875 655.5832)
+      (:list 33000 666.2499)
+      (:list 33750 670.91657)
+      (:list 34125 675.58326)
+      (:list 34219 680.24994)
+      (:list 34500 690.18744)
+      (:list 34625 694.12494)
+      (:list 35000 698.37494)
+      (:list 35250 702.20826)
+      (:list 35438 706.04157)
+      (:list 36000 716.91657)
+      (:list 37500 727.79157)
+      (:list 38100 732.66657)
+      (:list 38175 737.54157)
+      (:list 38250 740.79157)
+      (:list 39000 750.04157)
+      (:list 39375 753.29157)
+      (:list 39656 757.22907)
+      (:list 39750 760.54157)
+      (:list 39938 763.85407)
+      (:list 40000 767.0624)
+      (:list 40125 770.47907)
+      (:list 40188 773.6874)
+      (:list 40312 777.10407)
+      (:list 40375 780.3124)
+      (:list 40438 783.5207)
+      (:list 40500 792.729)
+      (:list 40750 795.9373)
+      (:list 41250 800.604)
+      (:list 42000 811.2707)
+      (:list 42600 815.9374)
+      (:list 42750 819.4374)
+      (:list 43500 828.9374)
+      (:list 43800 832.4374)
+      (:list 44250 836.9374)
+      (:list 45000 847.4374)
+      (:list 45281 851.3749)
+      (:list 45562 855.3124)
+      (:list 45750 858.9374)
+      (:list 46500 868.5624)
+      (:list 46750 872.1874)
+      (:list 47250 876.85407)
+      (:list 47750 881.52076)
+      (:list 47938 886.18744)
+      (:list 48000 895.39576)
+      (:list 49500 904.60407)
+      (:list 49800 907.8124)
+      (:list 50250 912.3124)
+      (:list 51000 922.8124)
+      (:list 51250 926.6457)
+      (:list 51500 930.479)
+      (:list 51750 934.3123)
+      (:list 51844 938.1456)
+      (:list 51938 941.4581)
+      (:list 52219 945.3956)
+      (:list 52500 955.3331)
+      (:list 52575 958.5831)
+      (:list 52650 961.8331)
+      (:list 52725 965.0831)
+      (:list 52875 968.5831)
+      (:list 53100 972.3331)
+      (:list 53250 975.8331)
+      (:list 53400 979.3331)
+      (:list 53700 983.3331)
+      (:list 53775 986.5831)
+      (:list 53850 989.8331)
+      (:list 53925 993.0831)
+      (:list 54000 1002.3331)
+      (:list 54750 1005.5831)
+      (:list 55050 1008.8331)
+      (:list 55125 1012.0831)
+      (:list 55425 1016.0831)
+      (:list 55500 1025.3331)
+      (:list 55800 1028.5831)
+      (:list 55950 1032.0831)
+      (:list 56025 1035.3331)
+      (:list 56100 1038.5831)
+      (:list 56175 1041.8331)
+      (:list 56250 1045.0831)
+      (:list 56344 1048.3956)
+      (:list 56438 1051.7081)
+      (:list 56531 1055.0206)
+      (:list 56812 1058.9581)
+      (:list 57000 1068.5831)
+      (:list 57094 1072.2081)
+      (:list 57469 1076.4581)
+      (:list 57750 1080.3956)
+      (:list 57900 1084.3331)
+      (:list 58500 1095.3331)
+      (:list 60000 1106.3331)
+      (:list 60643 1111.3331)
+      (:list 60750 1114.6903)
+      (:list 61500 1124.0475)
+      (:list 61821 1127.4047)
+      (:list 62250 1131.8333)
+      (:list 62625 1136.0833)
+      (:list 63000 1146.3333)
+      (:list 64500 1156.5833)
+      (:list 65250 1160.8333)
+      (:list 65400 1165.0833)
+      (:list 65700 1169.0833)
+      (:list 65775 1173.0833)
+      (:list 66000 1182.8333)
+      (:list 66062 1186.5833)
+      (:list 66312 1190.4166)
+      (:list 66375 1194.25)
+      (:list 66625 1198.0834)
+      (:list 66750 1201.5)
+      (:list 66938 1204.9166)
+      (:list 67000 1208.125)
+      (:list 67062 1211.3334)
+      (:list 67188 1214.75)
+      (:list 67250 1217.9584)
+      (:list 67375 1221.375)
+      (:list 67438 1224.5834)
+      (:list 67500 1233.7918)
+      (:list 67594 1237.1043)
+      (:list 67875 1241.0418)
+      (:list 68156 1244.9793)
+      (:list 68250 1248.2918)
+      (:list 68344 1251.6043)
+      (:list 68438 1254.9168)
+      (:list 68531 1258.2293)
+      (:list 68625 1261.5418)
+      (:list 68719 1264.8543)
+      (:list 68812 1268.1668)
+      (:list 68906 1271.4793)
+      (:list 69000 1280.7918)
+      (:list 69188 1284.1043)
+      (:list 69438 1287.9376)
+      (:list 69688 1291.771)
+      (:list 69750 1294.9794)
+      (:list 70500 1304.1878)
+      (:list 70929 1307.3961)
+      (:list 71250 1311.4675)
+      (:list 72000 1321.539)
+      (:list 72125 1325.6104)
+      (:list 72625 1330.277)
+      (:list 72750 1334.9436)
+      (:list 73500 1345.6102)
+      (:list 74250 1350.2769)
+      (:list 74750 1354.9435)
+      (:list 74875 1359.6101)
+      (:list 75000 1369.0267)
+      (:list 75250 1372.4434)
+      (:list 75375 1375.86)
+      (:list 75438 1379.0684)
+      (:list 75562 1382.485)
+      (:list 75625 1385.6934)
+      (:list 75688 1388.9017)
+      (:list 75750 1392.1101)
+      (:list 75812 1395.3185)
+      (:list 75875 1398.5269)
+      (:list 76375 1403.1935)
+      (:list 76500 1413.8601)
+      (:list 77250 1418.5267)
+      (:list 77625 1423.1934)
+      (:list 77719 1427.86)
+      (:list 78000 1437.7975)
+      (:list 78750 1441.735)
+      (:list 78938 1445.6725)
+      (:list 79219 1449.61)
+      (:list 79312 1452.9225)))
+    (:staff :g))
+   (:value
+    (:object
+     (:class voice)
+     (:slots
+      ((:onset 0)
+       (:duration 122206)
+       (:interpol (:number-or-nil (:number 50) (:t-or-nil nil)))
+       (:symbolic-date nil)
+       (:symbolic-dur nil)
+       (:symbolic-dur-extent 0)
+       (:lmidic
+        (:list
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)
+         (:list 6000)))
+       (:lonset
+        (:list
+         0
+         375
+         500
+         750
+         1969
+         2375
+         2750
+         3188
+         3562
+         6321
+         7500
+         8719
+         9094
+         9375
+         9469
+         9562
+         9656
+         9938
+         10031
+         10125
+         10219
+         10312
+         10406
+         10500
+         10575
+         10650
+         10725
+         12600
+         12975
+         13050
+         13125
+         13275
+         13350
+         13425
+         13500
+         13594
+         13688
+         13781
+         14156
+         14550
+         14850
+         15150
+         15225
+         15300
+         15375
+         15675
+         16071
+         16500
+         16562
+         16625
+         16750
+         16812
+         16938
+         17000
+         18214
+         20062
+         20438
+         20531
+         20625
+         20719
+         20812
+         20906
+         21000
+         21075
+         21150
+         21450
+         23312
+         23688
+         25562
+         26719
+         26812
+         26906
+         27000
+         27281
+         27375
+         27469
+         27562
+         27656
+         27750
+         27844
+         28219
+         28312
+         28406
+         28500
+         28562
+         28625
+         28938
+         29188
+         29325
+         29400
+         29475
+         29550
+         29625
+         29775
+         29850
+         29925
+         30300
+         30600
+         30675
+         30750
+         31125
+         32375
+         34219
+         34625
+         35000
+         35438
+         38175
+         39375
+         39656
+         39938
+         40000
+         40125
+         40188
+         40312
+         40375
+         40438
+         40750
+         42600
+         43800
+         45000
+         45281
+         45562
+         46750
+         47938
+         49800
+         51000
+         51250
+         51500
+         51844
+         51938
+         52219
+         52500
+         52575
+         52650
+         52725
+         52875
+         53100
+         53400
+         53700
+         53775
+         53850
+         53925
+         55125
+         55425
+         55800
+         55950
+         56025
+         56100
+         56175
+         56250
+         56344
+         56438
+         56531
+         56812
+         57094
+         57469
+         57900
+         60643
+         61821
+         62250
+         62625
+         65400
+         65775
+         66062
+         66375
+         66625
+         66938
+         67000
+         67062
+         67188
+         67250
+         67375
+         67438
+         67500
+         67594
+         67875
+         68156
+         68250
+         68344
+         68438
+         68531
+         68625
+         68719
+         68812
+         68906
+         69188
+         69438
+         69688
+         70929
+         72125
+         74875
+         75250
+         75375
+         75438
+         75562
+         75625
+         75688
+         75812
+         75875
+         77719
+         78938
+         79219
+         79312
+         79500))
+       (:ldur
+        (:list
+         (:list 374)
+         (:list 124)
+         (:list 249)
+         (:list 1218)
+         (:list 874)
+         (:list 968)
+         (:list 1030)
+         (:list 1155)
+         (:list 3540)
+         (:list 4531)
+         (:list 5320)
+         (:list 4945)
+         (:list 4945)
+         (:list 4758)
+         (:list 4758)
+         (:list 4758)
+         (:list 4946)
+         (:list 4945)
+         (:list 4946)
+         (:list 4945)
+         (:list 4945)
+         (:list 4946)
+         (:list 4946)
+         (:list 4927)
+         (:list 4927)
+         (:list 4927)
+         (:list 6727)
+         (:list 6577)
+         (:list 6502)
+         (:list 6502)
+         (:list 6577)
+         (:list 6502)
+         (:list 6502)
+         (:list 6502)
+         (:list 6520)
+         (:list 6520)
+         (:list 6520)
+         (:list 6802)
+         (:list 6821)
+         (:list 7027)
+         (:list 7027)
+         (:list 6952)
+         (:list 6952)
+         (:list 6952)
+         (:list 7177)
+         (:list 7273)
+         (:list 7627)
+         (:list 7261)
+         (:list 7261)
+         (:list 7323)
+         (:list 7261)
+         (:list 7324)
+         (:list 7260)
+         (:list 8412)
+         (:list 10011)
+         (:list 9958)
+         (:list 9863)
+         (:list 9864)
+         (:list 9863)
+         (:list 9863)
+         (:list 9864)
+         (:list 9864)
+         (:list 9845)
+         (:list 9845)
+         (:list 10070)
+         (:list 11632)
+         (:list 11708)
+         (:list 13207)
+         (:list 14114)
+         (:list 13707)
+         (:list 13708)
+         (:list 13707)
+         (:list 13895)
+         (:list 13707)
+         (:list 13707)
+         (:list 13707)
+         (:list 13708)
+         (:list 13707)
+         (:list 13707)
+         (:list 13988)
+         (:list 13707)
+         (:list 13708)
+         (:list 13707)
+         (:list 13676)
+         (:list 13676)
+         (:list 13926)
+         (:list 13925)
+         (:list 13813)
+         (:list 13826)
+         (:list 13826)
+         (:list 13826)
+         (:list 13826)
+         (:list 13901)
+         (:list 13826)
+         (:list 13826)
+         (:list 14126)
+         (:list 14351)
+         (:list 14126)
+         (:list 14126)
+         (:list 14426)
+         (:list 15301)
+         (:list 16770)
+         (:list 16676)
+         (:list 16770)
+         (:list 16832)
+         (:list 19319)
+         (:list 19957)
+         (:list 20163)
+         (:list 20164)
+         (:list 20132)
+         (:list 20195)
+         (:list 20132)
+         (:list 20194)
+         (:list 20133)
+         (:list 20132)
+         (:list 20382)
+         (:list 22170)
+         (:list 22870)
+         (:list 23920)
+         (:list 23751)
+         (:list 23751)
+         (:list 24658)
+         (:list 25657)
+         (:list 27019)
+         (:list 28157)
+         (:list 27957)
+         (:list 27957)
+         (:list 28051)
+         (:list 27894)
+         (:list 28082)
+         (:list 28082)
+         (:list 27876)
+         (:list 27876)
+         (:list 27876)
+         (:list 27951)
+         (:list 28026)
+         (:list 28101)
+         (:list 28251)
+         (:list 28026)
+         (:list 28026)
+         (:list 28026)
+         (:list 29151)
+         (:list 29376)
+         (:list 29451)
+         (:list 29526)
+         (:list 29451)
+         (:list 29451)
+         (:list 29451)
+         (:list 29451)
+         (:list 29470)
+         (:list 29469)
+         (:list 29469)
+         (:list 29657)
+         (:list 29658)
+         (:list 29844)
+         (:list 29901)
+         (:list 32362)
+         (:list 32941)
+         (:list 33263)
+         (:list 33209)
+         (:list 35609)
+         (:list 35609)
+         (:list 35596)
+         (:list 35684)
+         (:list 35684)
+         (:list 35746)
+         (:list 35683)
+         (:list 35684)
+         (:list 35747)
+         (:list 35683)
+         (:list 35746)
+         (:list 35684)
+         (:list 35683)
+         (:list 35715)
+         (:list 35902)
+         (:list 35903)
+         (:list 35715)
+         (:list 35715)
+         (:list 35715)
+         (:list 35715)
+         (:list 35715)
+         (:list 35715)
+         (:list 35715)
+         (:list 35716)
+         (:list 35903)
+         (:list 36058)
+         (:list 36058)
+         (:list 37049)
+         (:list 38183)
+         (:list 40612)
+         (:list 40487)
+         (:list 40487)
+         (:list 40425)
+         (:list 40487)
+         (:list 40425)
+         (:list 40425)
+         (:list 40487)
+         (:list 40488)
+         (:list 42269)
+         (:list 42987)
+         (:list 42987)
+         (:list 42800)
+         (:list 42894)))
+       (:lvel
+        (:list
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)))
+       (:loffset
+        (:list
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)))
+       (:lchan
+        (:list
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)))
+       (:lport
+        (:list
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil))
+       (:llegato nil)
+       (:tree
+        (:list
+         53/2
+         (:list
+          (:list (:list 2 4) (:list (:list 1 (:list 3 1 2)) 1))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 4.0 1.0 3))
+            (:list 1 (:list 1.0 3 2))))
+          (:list (:list 2 4) (:list (:list 1 (:list 1.0 2 1)) 1.0))
+          (:list (:list 2 4) (:list 2.0))
+          (:list (:list 2 4) (:list (:list 1 (:list 3.0 4)) 1.0))
+          (:list (:list 2 4) (:list 1 (:list 1 (:list 4.0 1.0 3))))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 1.0 3 1 1 1 1))
+            (:list 1 (:list 2.0 1 1 1 1 1 1))))
+          (:list (:list 2 4) (:list (:list 1 (:list 1 1 1 7)) 1.0))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 4.0 1))
+            (:list 1 (:list 3.0 1 1 2 1 1 1))))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 1 1 1 4 1))
+            (:list 1 (:list 2.0 2 1))))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 2.0 1 1 1 4 1))
+            (:list 1 (:list 3.0 4))))
+          (:list
+           (:list 2 4)
+           (:list (:list 1 (:list 1 1 2 1 2 1 4)) 1.0))
+          (:list (:list 2 4) (:list (:list 1 (:list 2.0 4 1.0)) 1.0))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 3.0 1))
+            (:list 1 (:list 2.0 1 1 1 1 1 1))))
+          (:list (:list 2 4) (:list (:list 1 (:list 1 1 4 4)) 1.0))
+          (:list (:list 2 4) (:list 1.0 (:list 1 (:list 1.0 6 4 1.0))))
+          (:list (:list 2 4) (:list 2.0))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 1.0 8 3.0))
+            (:list 1 (:list 4.0 1.0 1 1 1))))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 3 1 1 1 1 1))
+            (:list 1 (:list 1 4 1 1 1))))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 1 1 4 1.0 4 1))
+            (:list 1 (:list 1.0 1 1 1 1 2 1 1 1))))
+          (:list
+           (:list 2 4)
+           (:list (:list 1 (:list 4.0 4 1 1)) (:list 1 (:list 1 1))))
+          (:list (:list 2 4) (:list 1.0 (:list 1 (:list 1.0 4 1.0))))
+          (:list (:list 2 4) (:list 1.0 (:list 1 (:list 4.0 1.0 3))))
+          (:list
+           (:list 2 4)
+           (:list (:list 1 (:list 1.0 3 2)) (:list 1 (:list 1.0 3))))
+          (:list (:list 2 4) (:list 2.0))
+          (:list (:list 2 4) (:list (:list 1 (:list 8.0 1.0 1)) 1.0))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 4.0 3 1))
+            (:list 1 (:list 3.0 1 2 1 2 1 1 1))))
+          (:list (:list 2 4) (:list (:list 1 (:list 1.0 2)) 1.0))
+          (:list (:list 2 4) (:list (:list 1 (:list 4.0 1)) 1.0))
+          (:list (:list 2 4) (:list (:list 1 (:list 2.0 3)) 1.0))
+          (:list (:list 2 4) (:list (:list 1 (:list 3 3 2)) 1.0))
+          (:list
+           (:list 2 4)
+           (:list (:list 1 (:list 1.0 2)) (:list 1 (:list 8.0 3.0 1))))
+          (:list (:list 2 4) (:list 2.0))
+          (:list (:list 2 4) (:list (:list 1 (:list 2.0 3)) 1.0))
+          (:list
+           (:list 2 4)
+           (:list (:list 1 (:list 1 1 1)) (:list 1 (:list 1.0 1 3 3))))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 1 1 1 2 3 2))
+            (:list 1 (:list 2.0 4 1 1 1 1))))
+          (:list (:list 2 4) (:list 1.0 (:list 1 (:list 4.0 1.0 4 1))))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 4.0 2 1 1 1 1))
+            (:list 1 (:list 1 1 1 3 2))))
+          (:list
+           (:list 2 4)
+           (:list (:list 1 (:list 1.0 4 3)) (:list 1 (:list 1.0 4))))
+          (:list (:list 2 4) (:list 2.0))
+          (:list (:list 2 4) (:list (:list 1 (:list 6.0 1)) 1.0))
+          (:list
+           (:list 2 4)
+           (:list (:list 1 (:list 3.0 4)) (:list 1 (:list 1 1))))
+          (:list (:list 2 4) (:list 2.0))
+          (:list (:list 2 4) (:list 1.0 (:list 1 (:list 2.0 4 1.0 3))))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 1.0 4 1.0 4 2))
+            (:list 1 (:list 3.0 1 1 2 1 2 1 1))))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 1 3 3 1))
+            (:list 1 (:list 1 1 1 1 1 1 1 1))))
+          (:list (:list 2 4) (:list (:list 1 (:list 3.0 4 4 1)) 1.0))
+          (:list (:list 2 4) (:list (:list 1 (:list 4.0 3)) 1.0))
+          (:list (:list 2 4) (:list (:list 1 (:list 1.0 4 1.0)) 1.0))
+          (:list (:list 2 4) (:list 1.0 (:list 1 (:list 4.0 1.0 1))))
+          (:list
+           (:list 2 4)
+           (:list
+            (:list 1 (:list 4.0 2 1 2 1 1 1))
+            (:list 1 (:list 1.0 1 8 2.0))))
+          (:list (:list 2 4) (:list 1.0 (:list 1 (:list 4.0 1.0 3))))
+          (:list
+           (:list 2 4)
+           (:list 1.0 (:list 1 (:list 2.0 3 1 2)))))))
+       (:tempo 80)))
+     (:add-slots
+      ((:lvel
+        (:list
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)
+         (:list 100)))
+       (:loffset
+        (:list
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)
+         (:list 0)))
+       (:lchan
+        (:list
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)
+         (:list 1)))
+       (:lport
+        (:list
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil
+         nil))))))
+   (:id 19))
+  (:box
+   (:type :function)
+   (:reference omquantify)
+   (:group-id nil)
+   (:name "omquantify")
+   (:x 218)
+   (:y 241)
+   (:w 94)
+   (:h 30)
+   (:color nil)
+   (:border nil)
+   (:roundness nil)
+   (:text-font nil)
+   (:align nil)
+   (:lock nil)
+   (:lambda nil)
+   (:inputs
+    (:input
+     (:type :standard)
+     (:name "SELF")
+     (:value (:list 100))
+     (:reactive nil))
+    (:input
+     (:type :standard)
+     (:name "TEMPI")
+     (:value 80)
+     (:reactive nil))
+    (:input
+     (:type :standard)
+     (:name "MEASURES")
+     (:value (:list 2 4))
+     (:reactive nil))
+    (:input
+     (:type :standard)
+     (:name "MAX/")
+     (:value 13)
+     (:reactive nil))
+    (:input
+     (:type :optional)
+     (:name "forbid")
+     (:value (:list 9 11 13))
+     (:reactive nil)))
+   (:outputs (:output (:name "out") (:reactive nil)))
+   (:id 20))
+  (:box
+   (:type :value)
+   (:reference fixnum)
+   (:group-id nil)
+   (:name "aux1")
+   (:x 215)
+   (:y 110)
+   (:w 44)
+   (:h 30)
+   (:color
+    (:color-or-nil (:color (:color 1.0 1.0 1.0 1.0)) (:t-or-nil t)))
+   (:border nil)
+   (:roundness nil)
+   (:text-font nil)
+   (:align nil)
+   (:lock nil)
+   (:inputs)
+   (:outputs (:output (:name "value") (:reactive nil)))
+   (:value 80000)
+   (:id 21)))
+ (:connections
+  (:connection
+   (:from (:box 0 :out 0))
+   (:to (:box 3 :in 1))
+   (:attributes (:color nil :style nil :modif nil)))
+  (:connection
+   (:from (:box 1 :out 0))
+   (:to (:box 3 :in 0))
+   (:attributes (:color nil :style nil :modif nil)))
+  (:connection
+   (:from (:box 2 :out 0))
+   (:to (:box 3 :in 2))
+   (:attributes (:color nil :style nil :modif nil)))
+  (:connection
+   (:from (:box 3 :out 0))
+   (:to (:box 4 :in 1))
+   (:attributes (:color nil :style nil :modif nil)))
+  (:connection
+   (:from (:box 4 :out 0))
+   (:to (:box 7 :in 0))
+   (:attributes (:color nil :style nil :modif nil)))
+  (:connection
+   (:from (:box 5 :out 0))
+   (:to (:box 4 :in 0))
+   (:attributes (:color nil :style nil :modif nil)))
+  (:connection
+   (:from (:box 7 :out 0))
+   (:to (:box 6 :in 1))
+   (:attributes (:color nil :style nil :modif nil)))
+  (:connection
+   (:from (:box 8 :out 0))
+   (:to (:box 4 :in 2))
+   (:attributes (:color nil :style nil :modif nil)))
+  (:connection
+   (:from (:box 9 :out 0))
+   (:to (:box 3 :in 3))
+   (:attributes (:color nil :style nil :modif nil)))
+  (:connection
+   (:from (:box 10 :out 0))
+   (:to (:box 13 :in 0))
+   (:attributes (:color nil :style nil :modif nil)))
+  (:connection
+   (:from (:box 11 :out 0))
+   (:to (:box 10 :in 0))
+   (:attributes (:color nil :style nil :modif nil)))
+  (:connection
+   (:from (:box 13 :out 0))
+   (:to (:box 12 :in 1))
+   (:attributes (:color nil :style nil :modif nil)))
+  (:connection
+   (:from (:box 14 :out 0))
+   (:to (:box 10 :in 2))
+   (:attributes (:color nil :style nil :modif nil)))
+  (:connection
+   (:from (:box 15 :out 0))
+   (:to (:box 10 :in 1))
+   (:attributes (:color nil :style nil :modif nil)))
+  (:connection
+   (:from (:box 16 :out 0))
+   (:to (:box 17 :in 1))
+   (:attributes (:color nil :style nil :modif nil)))
+  (:connection
+   (:from (:box 17 :out 0))
+   (:to (:box 20 :in 0))
+   (:attributes (:color nil :style nil :modif nil)))
+  (:connection
+   (:from (:box 18 :out 0))
+   (:to (:box 17 :in 0))
+   (:attributes (:color nil :style nil :modif nil)))
+  (:connection
+   (:from (:box 20 :out 0))
+   (:to (:box 19 :in 1))
+   (:attributes (:color nil :style nil :modif nil)))
+  (:connection
+   (:from (:box 21 :out 0))
+   (:to (:box 17 :in 2))
+   (:attributes (:color nil :style nil :modif nil)))))
