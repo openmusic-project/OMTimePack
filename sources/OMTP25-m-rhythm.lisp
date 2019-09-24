@@ -17,6 +17,8 @@ vectors. This last structure is identified in certain function and variable
 names as 'a/r' (for 'array of rows').
 |#
 
+(in-package :om)
+
 ;==================================================================================
 ;==================================================================================
 ; GLOBAL CONSTANTS
@@ -373,8 +375,25 @@ the orders of the two tables"
   (let ((surplus (- *max-ptable-rank* 1 order)))
     (nthcdr surplus context)))
 
+
+(defmethod bpf-ranges ((self bpf))
+  (let* ((points (point-list self))
+         (rep (loop for point in points 
+                    maximize (om-point-y point) into y1
+                    maximize (om-point-x point) into x1
+                    minimize (om-point-y point) into x
+                    minimize (om-point-x point) into y
+                    finally (return (list x x1 y y1))))
+         (x (first rep)) 
+         (x1 (second rep)) 
+         (y (third rep)) 
+         (y1 (fourth rep)))
+    
+    (list x x1 y y1)))
+
+
 (defun make-interpolation (row-min row-max x-val bpf x-offset result-type)
-  (let* ((bpf-range (give-bpf-range bpf))
+  (let* ((bpf-range (bpf-ranges bpf))
          (bpf-min (third bpf-range)) (bpf-max (fourth bpf-range))
          (bpf-samp (get-one-sample bpf (+ x-val x-offset)))
          (interp-factor (and bpf-samp (> bpf-max bpf-min)

@@ -1,0 +1,50 @@
+;;;;============================================================================
+;;;; OMTP_2.5.lib
+;;;;
+;;;; OMTimePack library version 2.5
+;;;; author: Paul Nauert
+;;;;
+;;;; VERSION 1, 14 October 2001
+;;;; with the assistance of C. Agon, G. Assayag, K. Haddad
+;;;; and the support of the University of California, Santa Cruz Faculty Senate
+;;;; and the support of IRCAM, Scientific Division
+;;;;
+;;;; VERSION 2, 15 April 2004
+;;;; with the support of the University of California, Santa Cruz Faculty Senate
+;;;; and the Columbia University Department of Music
+;;;;
+;;;; VERSION 2.5, 25 August 2005
+;;;;
+;;;;============================================================================ 
+
+
+(:om-lib
+ 
+ (:version 2.6)
+
+ (:doc "OMTimePack library")
+
+ (:author "Paul Nauert, 2001-2005")
+
+ (:source-files 
+  "sources/OMTP25-m-rhythm" 
+  "sources/OMTP25-m-partn"
+  "sources/OMTP25-mapping"
+  "sources/OMTP25-utils1"
+  "sources/OMTP25-utils2")
+
+ (:symbols
+  (:packages
+   (:package 
+    (:name "Generators") 
+    (:functions  M-RHYTHM M-MAPPED-RHYTHM M-EMPTY-BARS M-VARI-PULSE))
+   (:package 
+    (:name"Transformations") 
+    (:functions CONFORM M-PARTITION))    
+   (:package 
+    (:name"Utilities")
+    (:functions TIMEPOINTS->DENSITY RESIZE-PTABLE THRU GM-PGMOUT))
+   ))
+ )
+
+

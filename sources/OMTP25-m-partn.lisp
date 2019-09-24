@@ -18,6 +18,8 @@ vectors. This last structure is identified in certain function and variable
 names as 'a/r' (for 'array of rows').
 |#
 
+(in-package :om)
+
 ; cf interpolation in...
 ; ...mrhythm (bpf start min max)
 ; ...M-PARTITION (bpf min max) --optimize--> (bpf 0 min max)

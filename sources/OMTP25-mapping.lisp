@@ -18,6 +18,8 @@
 ; pulse. Other functions in this file support construction of the variable pulse.
 ;==================================================================================
 
+(in-package :om)
+
 ;==================================================================================
 ; M-MAPPED-RHYTHM
 
